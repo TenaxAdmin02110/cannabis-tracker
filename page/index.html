@@ -1,0 +1,975 @@
+<meta name="dash-one-writer">
+<style>
+.ct-wrap{font-family:var(--font-anthropic-sans);color:var(--color-fg);display:flex;flex-direction:column;gap:var(--cds-gap-lg)}
+.ct-title{font-family:var(--font-anthropic-serif);font-weight:700;font-size:var(--cds-font-size-title);line-height:1.1;letter-spacing:-0.015em;margin:0}
+.ct-over{margin:0 0 var(--cds-gap-xs);font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-fg-muted)}
+.ct-rule{height:2px;background:var(--ct-accent);margin:10px 0 var(--cds-gap-sm)}
+.ct-said{list-style:none;margin:6px 0 0;padding:0 0 0 10px;border-left:1px solid var(--color-border-line);display:flex;flex-direction:column;gap:4px}
+.ct-said li{border:0;padding:0}
+.ct-said-lab{font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-fg-muted);margin-top:6px}
+.ct-lede{margin:var(--cds-gap-xs) 0 0;color:var(--color-fg);max-width:70ch}
+.ct-asof{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);margin:var(--cds-gap-xs) 0 0}
+.ct-nav{display:flex;flex-wrap:wrap;gap:var(--cds-gap-sm);align-items:center}
+.ct-btn{font:inherit;border:1px solid var(--color-border-line);background:var(--color-panel);color:var(--color-fg);border-radius:var(--cds-radius);padding:6px 12px;cursor:pointer}
+.ct-btn[aria-pressed="true"]{border-color:var(--color-fg);border-bottom:2px solid var(--ct-accent);font-weight:800}
+.ct-card h2,.ct-card h3{font-weight:800 !important}
+.ct-table th{text-transform:uppercase;letter-spacing:0.06em;font-size:11px}
+.ct-card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);min-width:0}
+.ct-card h2,.ct-card h3{margin:0 0 var(--cds-gap-sm);font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium)}
+.ct-sub{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);margin:0 0 var(--cds-gap-sm)}
+.ct-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--cds-gap-md)}
+.ct-kpi .ct-num{font-family:var(--font-anthropic-serif);font-weight:700;font-size:2.4rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.ct-kpi .ct-lab{display:flex;align-items:center;gap:6px;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.ct-sw{display:inline-block;width:8px;height:8px}
+.ct-grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--cds-gap-lg)}
+.ct-mapbox{position:relative;min-height:260px}
+.ct-mapbox svg{display:block;width:100%;height:auto}
+.ct-tile{cursor:pointer;outline:none}
+.ct-tile text{font-size:13px;font-weight:600;pointer-events:none}
+.ct-shape{stroke:var(--color-panel);stroke-width:0.8;stroke-linejoin:round}
+.ct-lead{stroke:var(--color-fg-muted);stroke-width:0.7}
+.ct-tile.ct-sel .ct-shape,.ct-tile:hover .ct-shape,.ct-tile:focus .ct-shape,.ct-tile.ct-sel .ct-box,.ct-tile:hover .ct-box,.ct-tile:focus .ct-box{stroke:var(--color-fg);stroke-width:2}
+.ct-legend{display:flex;flex-wrap:wrap;gap:var(--cds-gap-md);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin-top:var(--cds-gap-sm)}
+.ct-legend span{display:inline-flex;align-items:center;gap:6px}
+.ct-tip{position:absolute;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);border-radius:var(--cds-radius);padding:6px 10px;font-size:var(--cds-font-size-caption);max-width:240px;z-index:2}
+.ct-tip b{display:block}
+.ct-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--cds-gap-sm)}
+.ct-list li{border-bottom:1px solid var(--color-border-line);padding-bottom:var(--cds-gap-sm)}
+.ct-list li:last-child{border-bottom:0;padding-bottom:0}
+.ct-meta{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.ct-list a{color:var(--color-fg)}
+.ct-odds{display:flex;flex-direction:column;gap:var(--cds-gap-md)}
+.ct-orow{display:grid;grid-template-columns:minmax(0,1fr) 64px;gap:4px 12px;align-items:center}
+.ct-omove{font-size:var(--cds-font-size-body)}
+.ct-opct{font-variant-numeric:tabular-nums;font-weight:var(--cds-font-weight-medium);text-align:right;font-size:1.1rem}
+.ct-obar{grid-column:1 / -1;height:6px;background:var(--cds-chart-grid);overflow:hidden}
+.ct-obar i{display:block;height:100%}
+.ct-orat{grid-column:1 / -1}
+.ct-tablewrap{overflow-x:auto}
+.ct-table{width:100%;border-collapse:collapse;font-size:var(--cds-font-size-body)}
+.ct-table th,.ct-table td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--color-border-line);white-space:nowrap}
+.ct-table th{color:var(--color-fg-muted);font-weight:var(--cds-font-weight-medium);font-size:var(--cds-font-size-caption)}
+.ct-table tr.ct-click{cursor:pointer}
+.ct-table tr.ct-click:hover td{background:var(--color-bg)}
+.ct-flip{font-weight:var(--cds-font-weight-medium)}
+.ct-pill{display:inline-flex;align-items:center;gap:6px;padding:3px 8px;font-size:var(--cds-font-size-caption);font-weight:800;letter-spacing:0.06em;text-transform:uppercase;background:var(--color-bg);border:1px solid var(--color-border-line)}
+.ct-sthead{display:flex;flex-wrap:wrap;align-items:center;gap:var(--cds-gap-md)}
+.ct-sthead h2{font-family:var(--font-anthropic-serif);font-weight:700 !important;font-size:var(--cds-font-size-title);margin:0}
+.ct-dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;margin:0}
+.ct-dl dt{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.ct-dl dd{margin:0}
+.ct-note{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.ct-empty{color:var(--color-fg-muted);font-style:italic}
+.ct-path{display:flex;flex-direction:column;gap:var(--cds-gap-md)}
+.ct-path-goal{font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-fg-muted)}
+.ct-route{display:grid;grid-template-columns:200px minmax(0,1fr);gap:var(--cds-gap-sm) var(--cds-gap-lg);border-top:1px solid var(--color-border-line);padding-top:var(--cds-gap-sm)}
+.ct-route-name{font-weight:800}
+@media (max-width:560px){.ct-route{grid-template-columns:1fr}}
+.ct-muni{min-height:320px}
+.ct-muni circle{cursor:pointer}
+.ct-muni circle:hover,.ct-muni circle.ct-on{stroke:var(--color-fg);stroke-width:1.5}
+.ct-muni-detail{margin-top:var(--cds-gap-sm)}
+.ct-sw.ct-hollow{background:transparent !important;border:2px solid currentColor;box-sizing:border-box}
+.ct-mapframe{border:1px solid var(--color-border-line);overflow:hidden;position:relative}
+.ct-mapframe svg{cursor:grab;touch-action:none}
+.ct-zbar{position:absolute;top:8px;right:8px;display:flex;flex-direction:column;border:1px solid var(--color-border-line);background:var(--color-panel);z-index:1}
+.ct-zbtn{width:28px;height:28px;border:0;border-bottom:1px solid var(--color-border-line);background:var(--color-panel);color:var(--color-fg);font:inherit;font-size:15px;line-height:1;cursor:pointer;padding:0}
+.ct-zbtn:last-child{border-bottom:0}
+.ct-zbtn:hover{background:var(--color-bg)}
+.ct-zhint{position:absolute;left:8px;bottom:8px;font-size:11px;color:var(--color-fg-muted);background:var(--color-panel);padding:2px 6px;border:1px solid var(--color-border-line);pointer-events:none}
+.ct-land{stroke:none;pointer-events:none}
+.ct-roads{fill:none;stroke:color-mix(in srgb,var(--color-fg) 32%,transparent);stroke-width:0.9;pointer-events:none}
+.ct-st{cursor:pointer;outline:none}
+.ct-st path{fill-opacity:0.5;stroke:var(--color-panel);stroke-width:1;stroke-linejoin:round}
+.ct-st:hover path,.ct-st:focus path,.ct-st.ct-sel path{stroke:var(--color-fg);stroke-width:2;fill-opacity:0.7}
+.ct-lbl{paint-order:stroke;stroke:var(--color-panel);stroke-linejoin:round;fill:var(--color-fg);pointer-events:none;font-family:var(--font-anthropic-sans)}
+.ct-code{font-weight:800}
+.ct-city{font-weight:500}
+.ct-ctylbl{fill:var(--color-fg-muted);text-transform:uppercase;letter-spacing:0.06em}
+.ct-sfill{fill:var(--color-panel);pointer-events:none}
+.ct-sline{fill:none;stroke:var(--color-fg);stroke-width:1.5;pointer-events:none}
+.ct-mbase{fill:none;stroke:var(--color-border-line);stroke-width:0.5;pointer-events:none}
+.ct-mcounty{fill:none;stroke:color-mix(in srgb,var(--color-fg) 40%,transparent);stroke-width:0.8;pointer-events:none}
+.ct-mpoly{cursor:pointer}
+.ct-mpoly:hover,.ct-mpoly.ct-on{stroke:var(--color-fg) !important;stroke-width:2 !important}
+.ct-upmark{fill:var(--color-fg);stroke:var(--color-panel);stroke-width:1.5px;pointer-events:none}
+.ct-upsw{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--color-fg);box-shadow:0 0 0 1.5px var(--color-panel)}
+.ct-upwrap{margin-top:var(--cds-gap-md);border-top:1px solid var(--color-border-line);padding-top:var(--cds-gap-sm)}
+.ct-uphead{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-fg-muted);margin:0 0 6px}
+.ct-uprow{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:4px 16px}
+.ct-upitem{font:inherit;font-size:var(--cds-font-size-caption);background:none;border:0;border-left:2px solid var(--color-fg);padding:2px 8px;cursor:pointer;color:var(--color-fg);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ct-upitem:hover,.ct-upitem:focus{background:var(--color-bg)}
+.ct-upitem b{font-weight:800;margin-right:6px}
+.ct-upitem span{color:var(--color-fg-muted);margin-right:6px}
+[hidden]{display:none !important}
+.ct-tabs{display:flex;flex-wrap:wrap;border-bottom:2px solid var(--color-border-line)}
+.ct-tab{font:inherit;font-size:16px;font-weight:700;background:none;border:0;border-bottom:4px solid transparent;margin-bottom:-2px;padding:10px 20px;cursor:pointer;color:var(--color-fg-muted)}
+.ct-tab[aria-selected="true"]{color:var(--color-fg);border-bottom-color:var(--ct-accent)}
+.ct-tab:hover,.ct-tab:focus-visible{color:var(--color-fg);background:var(--color-bg)}
+.ct-tab small{font-weight:500;color:var(--color-fg-muted);margin-left:4px}
+.ct-news{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.ct-news li{padding:14px 0;border-bottom:1px solid var(--color-border-line)}
+.ct-news li:first-child{padding-top:4px}
+.ct-news li:last-child{border-bottom:0}
+.ct-nhead{font-weight:800;color:var(--color-fg);font-size:1.05rem;line-height:1.3}
+.ct-nsum{margin:5px 0;max-width:78ch;line-height:1.45}
+.ct-nsearch{font:inherit;width:100%;max-width:440px;padding:9px 12px;border:1px solid var(--color-border-line);background:var(--color-panel);color:var(--color-fg);border-radius:var(--cds-radius);margin:0 0 6px}
+.ct-help{background:var(--color-bg);border-left:3px solid var(--ct-accent);padding:8px 12px;margin:0 0 14px;max-width:78ch}
+.ct-more{margin-top:12px}
+.ct-coming{border-left:4px solid var(--ct-accent)}
+.ct-coming-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.ct-coming h2{font-family:var(--font-anthropic-serif);font-weight:700 !important;font-size:var(--cds-font-size-title);margin:0 0 6px}
+.ct-x{font:inherit;font-size:26px;line-height:1;background:none;border:1px solid var(--color-border-line);cursor:pointer;color:var(--color-fg);padding:2px 10px}
+.ct-x:hover{background:var(--color-bg)}
+.ct-clist{list-style:none;margin:14px 0;padding:0;display:flex;flex-direction:column}
+.ct-clist li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 16px;border-top:1px solid var(--color-border-line);padding:12px 0}
+.ct-cdate{font-family:var(--font-anthropic-serif);font-weight:700;font-size:1.3rem;line-height:1.2}
+.ct-cevent{font-weight:700;font-size:1.02rem}
+.ct-btn-main{background:var(--color-fg);color:var(--color-panel);border-color:var(--color-fg);font-weight:800;padding:9px 16px}
+.ct-btn-main:hover{opacity:0.9}
+@media (max-width:560px){.ct-clist li{grid-template-columns:1fr}}
+@media print{.ct-nav{display:none}.ct-card{break-inside:avoid}}
+</style>
+
+<div class="ct-wrap">
+  <header id="top">
+    <p class="ct-over">Tenax Strategies · Cannabis Policy</p>
+    <h1 class="ct-title">National Cannabis Outlook Tracker</h1>
+    <div class="ct-rule"></div>
+    <p class="ct-lede"><b data-draw="cnt-retail" data-source="status_counts" data-field="count" data-where="status=Retail">—</b> states allow adult-use (retail) cannabis, <b data-draw="cnt-med" data-source="status_counts" data-field="count" data-where="status=Medical only">—</b> are medical only, and <b data-draw="cnt-ban" data-source="status_counts" data-field="count" data-where="status=Banned">—</b> have no comprehensive program. Democrats take the U.S. Senate in January. Near-term federal dates and pending decisions are on the map page below.</p>
+    <p class="ct-asof">Compiled by Tenax Strategies from official sources and public reporting. Updated every weekday morning, with a full review each Sunday. Odds are Tenax's analytical estimates, not betting-market prices.</p>
+  </header>
+
+  <nav class="ct-nav" aria-label="Views">
+    <button type="button" class="ct-btn" id="nav-federal" aria-pressed="true">Federal overview &amp; map</button>
+    <select class="dash-select" data-draw="state-pick" aria-label="Jump to a state" data-source="states"></select>
+  </nav>
+
+  <section id="federal">
+    <div class="ct-help" id="how-to">
+      <b>How to use this tracker.</b> 1. Click any state on the map, or pick one from the menu above, to open its page. 2. States marked with a dot have a dated change in the next 90 days; their page opens on those dates first. 3. Use the News tabs for linked stories with short summaries. 4. "Federal overview &amp; map" brings you back here.
+    </div>
+    <div class="ct-tabs" role="tablist" aria-label="Federal page sections">
+      <button type="button" class="ct-tab" role="tab" data-scope="fed" data-tab="overview" aria-selected="true">Overview &amp; map</button>
+      <button type="button" class="ct-tab" role="tab" data-scope="fed" data-tab="news" aria-selected="false">Federal news <small class="ct-ncount" data-scope="fed"></small></button>
+    </div>
+    <div class="ct-card" id="fed-news-pane" data-pane="fed-news" hidden>
+      <h2>Federal cannabis news</h2>
+      <p class="ct-help">News about Congress, the White House, the DEA and other national agencies. <b>Click a bold headline</b> to read the full story on the news site (it opens in a new tab). The short paragraph under each headline tells you what the story is about. Newest stories are at the top. To see news for one state, pick the state from the menu above or click it on the map.</p>
+      <input type="search" class="ct-nsearch" data-scope="fed" placeholder="Search federal news (for example: hemp, banking, DEA)" aria-label="Search federal news">
+      <ul class="ct-news" data-draw="fed-news-all" data-source="news"></ul>
+    </div>
+    <div class="ct-wrap" id="fed-overview" data-pane="fed-overview">
+      <div class="ct-kpis" id="kpis">
+        <div class="ct-card ct-kpi"><div class="ct-lab"><i class="ct-sw" data-status="Retail"></i>Retail (adult-use)</div><div class="ct-num" data-draw="kpi-retail" data-source="status_counts" data-field="count" data-where="status=Retail">—</div></div>
+        <div class="ct-card ct-kpi"><div class="ct-lab"><i class="ct-sw" data-status="Medical only"></i>Medical only</div><div class="ct-num" data-draw="kpi-med" data-source="status_counts" data-field="count" data-where="status=Medical only">—</div></div>
+        <div class="ct-card ct-kpi"><div class="ct-lab"><i class="ct-sw" data-status="Banned"></i>Banned / no comprehensive program</div><div class="ct-num" data-draw="kpi-ban" data-source="status_counts" data-field="count" data-where="status=Banned">—</div></div>
+      </div>
+
+      <div class="ct-card" id="map-card">
+        <h2>Status map</h2>
+        <p class="ct-sub">Click a state to open its tab: key players, recent news, upcoming meetings and odds on next moves.</p>
+        <div class="ct-mapbox ct-mapframe" data-draw="map" data-source="states shapes basemap events" data-fetchpriority="high"></div>
+        <div class="ct-legend">
+          <span><i class="ct-sw" data-status="Retail"></i>Retail (adult-use legal)</span>
+          <span><i class="ct-sw" data-status="Medical only"></i>Medical only</span>
+          <span><i class="ct-sw" data-status="Banned"></i>Banned (may allow low-THC/CBD)</span>
+          <span><i class="ct-upsw"></i>Dated change in the next 90 days</span>
+        </div>
+        <div class="ct-upwrap">
+          <p class="ct-uphead">Coming up in the states · next 90 days</p>
+          <div class="ct-uprow" data-draw="upcoming-row" data-source="events states"></div>
+        </div>
+      </div>
+
+      <div class="ct-grid2">
+        <div class="ct-card" id="fed-news-card">
+          <h2>Latest federal news</h2>
+          <p class="ct-sub">The newest stories. Click a bold headline to read it, or open the Federal news tab for all of them.</p>
+          <ul class="ct-list" data-draw="fed-news" data-source="news"></ul>
+        </div>
+        <div class="ct-wrap">
+          <div class="ct-card" id="fed-events-card">
+            <h2>Upcoming federal deadlines</h2>
+            <ul class="ct-list" data-draw="fed-events" data-source="events"></ul>
+          </div>
+          <div class="ct-card" id="fed-odds-card">
+            <h2>Odds on next federal moves</h2>
+            <p class="ct-sub">Tenax's estimates of the chance each happens by the stated date.</p>
+            <div class="ct-odds" data-draw="fed-odds" data-source="odds"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ct-card" id="fed-players-card">
+        <h2>Federal key players</h2>
+        <ul class="ct-list" data-draw="fed-players" data-source="players news"></ul>
+      </div>
+
+      <div class="ct-card" id="senate-card">
+        <h2>2026 U.S. Senate results</h2>
+        <p class="ct-sub">35 races. Results are AP projections and unofficial until certified. Click a row to open that state.</p>
+        <div class="ct-tablewrap">
+          <table class="ct-table" data-source="senate" data-row-key="state">
+            <thead><tr><th data-field="stateName">State</th><th data-field="winner">Winner</th><th data-field="party">Party</th><th data-field="defeated">Defeated</th><th data-field="flip">Flipped seat</th></tr></thead>
+            <tbody data-draw="senate-rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="state" hidden>
+    <div class="ct-wrap">
+      <div class="ct-card ct-coming" id="st-coming" hidden>
+        <div class="ct-coming-top">
+          <p class="ct-over">Heads up · changes coming soon</p>
+          <button type="button" class="ct-x" id="st-coming-x" aria-label="Close and show the full state page">×</button>
+        </div>
+        <div data-draw="st-coming" data-source="events states"></div>
+        <button type="button" class="ct-btn ct-btn-main" id="st-coming-done">Got it, show me the full state page</button>
+      </div>
+      <div class="ct-card" id="state-head">
+        <div class="ct-sthead">
+          <h2 data-draw="st-name">—</h2>
+          <span data-draw="st-status">—</span>
+          <button type="button" class="ct-btn" id="st-coming-open" hidden>Coming up soon</button>
+        </div>
+        <p data-draw="st-outlook">—</p>
+        <dl class="ct-dl">
+          <dt>Current law</dt><dd data-draw="st-note">—</dd>
+          <dt>Governor</dt><dd data-draw="st-gov">—</dd>
+          <dt>Regulator</dt><dd data-draw="st-reg">—</dd>
+          <dt>2026 Senate race</dt><dd data-draw="st-senate">—</dd>
+        </dl>
+      </div>
+
+      <div class="ct-tabs" role="tablist" aria-label="State page sections" id="st-tabs">
+        <button type="button" class="ct-tab" role="tab" data-scope="st" data-tab="overview" aria-selected="true">Overview &amp; map</button>
+        <button type="button" class="ct-tab" role="tab" data-scope="st" data-tab="news" aria-selected="false">State news <small class="ct-ncount" data-scope="st"></small></button>
+      </div>
+      <div class="ct-card" id="st-news-pane" data-pane="st-news" hidden>
+        <h3>Cannabis news: <span data-draw="st-news-name" data-source="states"></span></h3>
+        <p class="ct-help">News about cannabis laws and politics in this state. <b>Click a bold headline</b> to read the full story on the news site (it opens in a new tab). The short paragraph under each headline tells you what the story is about. Newest stories are at the top.</p>
+        <input type="search" class="ct-nsearch" data-scope="st" placeholder="Search this state's news" aria-label="Search this state's news">
+        <ul class="ct-news" data-draw="st-news-all" data-source="news"></ul>
+      </div>
+
+      <div class="ct-wrap" id="st-overview" data-pane="st-overview">
+      <div class="ct-card" id="state-path-card" hidden>
+        <h3>Pathway to legalization</h3>
+        <p class="ct-sub">What would have to happen, by route. Vote thresholds and initiative rules from Ballotpedia.</p>
+        <div class="ct-path" data-draw="st-path" data-source="pathways"></div>
+      </div>
+
+      <div class="ct-card" id="state-muni-card">
+        <h3>Local cannabis rules by municipality</h3>
+        <p class="ct-sub">From Tenax's municipal tracker, or for states it does not cover, from state regulators' own lists (source on each area). Each shaded area is a town, township, city or county; click one for its details. Unshaded areas are not in the tracker.</p>
+        <div class="ct-legend" data-draw="muni-legend" data-source="munis"></div>
+        <div class="ct-mapbox ct-muni" data-draw="st-muni" data-source="munis munigeo counties basemap shapes"></div>
+        <div class="ct-muni-detail" data-draw="muni-detail" data-source="munis"></div>
+      </div>
+
+      <div class="ct-grid2">
+        <div class="ct-card" id="state-players-card">
+          <h3>Key players</h3>
+          <ul class="ct-list" data-draw="st-players" data-source="players news"></ul>
+        </div>
+        <div class="ct-card" id="state-news-card">
+          <h3>Latest news</h3>
+          <p class="ct-sub">The newest stories. Open the State news tab for all of them.</p>
+          <ul class="ct-list" data-draw="st-news" data-source="news"></ul>
+        </div>
+      </div>
+
+      <div class="ct-grid2">
+        <div class="ct-card" id="state-events-card">
+          <h3>Upcoming meetings &amp; possible changes</h3>
+          <ul class="ct-list" data-draw="st-events" data-source="events"></ul>
+        </div>
+        <div class="ct-card" id="state-odds-card">
+          <h3>Odds on next moves</h3>
+          <p class="ct-sub">Tenax's estimates of the chance each happens by the stated date.</p>
+          <div class="ct-odds" data-draw="st-odds" data-source="odds"></div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <details id="notes">
+    <summary>How this tracker works</summary>
+    <p class="ct-note">Status: "Retail" means adult-use cannabis is legal under state law (Virginia's retail sales start July 1, 2027; DC sales are limited by a congressional rider). "Medical only" means a comprehensive medical program (Texas's is limited). "Banned" means no comprehensive medical or adult-use program, though some of these states allow low-THC/CBD products. Election winners come from media projections (AP, CBS News) and are unofficial until states certify them. Odds are Tenax's analytical estimates from the reporting linked on each card and should be read as directional, not precise. News: each story links to the outlet, agency, law firm or advocacy group that published it (no forums or social media); the short summary under each headline describes the article itself. Upcoming changes: when you open a state with a dated change in the next 90 days, a "Coming up" card shows first, with a source link for each item; close it to see the full state page. Municipal status comes from a copy of Tenax's municipal tracker (Airtable) for the states it covers; for every other state it comes from that state's own official source (a regulator's license list, open-data file, or statute), linked on each area. Where state law, not local choice, decides the answer (banned states, Oklahoma, Texas, Nebraska and DC), every county is shaded with the governing statute. Map boundaries, Interstates and city points come from the U.S. Census Bureau (2024).</p>
+  </details>
+</div>
+
+<script>
+(function(){
+  const fmtDay = d3.utcFormat('%b %-d, %Y');
+  const fmtMon = d3.utcFormat('%b %Y');
+  window.ctFmtDate = function(s){
+    if(!s) return '';
+    if(/^\d{4}-\d{2}-\d{2}$/.test(s)) return fmtDay(new Date(s + 'T00:00:00Z'));
+    if(/^\d{4}-\d{2}$/.test(s)) return fmtMon(new Date(s + '-01T00:00:00Z'));
+    return s;
+  };
+  window.ctColor = function(status){
+    if(status === 'Retail') return dash.colors[0];
+    if(status === 'Medical only') return dash.colors[1];
+    return dash.colors[2];
+  };
+  document.querySelectorAll('.ct-wrap').forEach((el) => el.style.setProperty('--ct-accent', dash.colors[2]));
+  window.ctState = null;
+
+  dash.calc('status_counts', {
+    inputs: ['states'],
+    title: 'States by status',
+    description: 'Count of the 50 states in each status (DC excluded).',
+    fn: (states) => {
+      const order = ['Retail', 'Medical only', 'Banned'];
+      return order.map((status) => ({status, count: states.filter((s) => s.code !== 'DC' && s.status === status).length}));
+    }
+  });
+
+  document.querySelectorAll('.ct-sw[data-status]').forEach((el) => { el.style.background = window.ctColor(el.getAttribute('data-status')); });
+
+  const STATE_DRAWS = ['st-name','st-status','st-outlook','st-note','st-gov','st-reg','st-senate','st-players','st-news','st-events','st-odds','state-pick','map','st-path','st-muni','muni-legend','muni-detail','st-coming','st-news-all','st-news-name'];
+  window.ctMuni = null;
+  dash.onData(() => {
+    const g = dash.data('states');
+    const s = (g.status === 'ok' && window.ctState) ? g.data.find((r) => r.code === window.ctState) : null;
+    document.querySelectorAll('#state-path-card').forEach((c) => { c.hidden = !(s && (s.status === 'Banned' || s.status === 'Medical only')); });
+  });
+  window.ctOpen = function(code){
+    if((code || null) !== window.ctState){
+      window.ctTab.st = 'overview'; window.ctNewsQ.st = '';
+      document.querySelectorAll('.ct-nsearch[data-scope="st"]').forEach((i) => { i.value = ''; });
+    }
+    window.ctState = code || null;
+    window.ctMuni = null;
+    const sg = dash.data('states');
+    const srow = (sg.status === 'ok' && code) ? sg.data.find((r) => r.code === code) : null;
+    document.querySelectorAll('#state-path-card').forEach((c) => { c.hidden = !(srow && (srow.status === 'Banned' || srow.status === 'Medical only')); });
+    const fed = document.getElementById('federal');
+    const st = document.getElementById('state');
+    if(fed) fed.hidden = !!code;
+    if(st) st.hidden = !code;
+    document.querySelectorAll('#nav-federal').forEach((b) => b.setAttribute('aria-pressed', code ? 'false' : 'true'));
+    dash.setLink(code ? ('state-' + code) : 'federal');
+    STATE_DRAWS.forEach((n) => dash.draw(n));
+    window.ctPanes();
+    window.scrollTo({top: 0});
+  };
+  document.querySelectorAll('#nav-federal').forEach((b) => b.addEventListener('click', () => window.ctOpen(null)));
+
+  window.addEventListener('beforeprint', () => { const st = document.getElementById('state'); const fed = document.getElementById('federal'); if(fed) fed.hidden = false; if(st && window.ctState) st.hidden = false; });
+  window.addEventListener('afterprint', () => { window.ctOpen(window.ctState); });
+
+  window.ctTab = {fed: 'overview', st: 'overview'};
+  window.ctNewsQ = {fed: '', st: ''};
+  window.ctDismissed = new Set();
+  try { JSON.parse(localStorage.getItem('ct-coming-closed') || '[]').forEach((k) => window.ctDismissed.add(k)); } catch(e) {}
+  const saveDismissed = () => { try { localStorage.setItem('ct-coming-closed', JSON.stringify([...window.ctDismissed])); } catch(e) {} };
+  window.ctNewsRows = function(code){
+    const g = dash.data('news');
+    if(g.status !== 'ok' || !code) return [];
+    return g.data.filter((r) => String(r.states || r.state).split(',').includes(code)).sort((a, b) => d3.descending(a.date, b.date));
+  };
+  window.ctComingKey = function(code){
+    if(!code || !window.ctUpcoming) return null;
+    const up = window.ctUpcoming().get(code);
+    return up && up.length ? code + ':' + up.map((e) => e.id).join(',') : null;
+  };
+  window.ctPanes = function(){
+    const code = window.ctState;
+    const key = window.ctComingKey(code);
+    const coming = !!(key && !window.ctDismissed.has(key));
+    const set = (sel, hide) => document.querySelectorAll(sel).forEach((n) => { n.hidden = hide; });
+    set('#fed-overview', window.ctTab.fed !== 'overview');
+    set('#fed-news-pane', window.ctTab.fed !== 'news');
+    set('#st-coming', !coming);
+    set('#state-head, #st-tabs', coming);
+    set('#st-overview', coming || window.ctTab.st !== 'overview');
+    set('#st-news-pane', coming || window.ctTab.st !== 'news');
+    set('#st-coming-open', !key || coming);
+    document.querySelectorAll('.ct-tab').forEach((b) => b.setAttribute('aria-selected', String(window.ctTab[b.dataset.scope] === b.dataset.tab)));
+    const ok = dash.data('news').status === 'ok';
+    document.querySelectorAll('.ct-ncount').forEach((s) => {
+      const c = s.dataset.scope === 'fed' ? 'US' : code;
+      s.textContent = ok && c ? '(' + window.ctNewsRows(c).length + ')' : '';
+    });
+  };
+  window.ctSetTab = function(scope, tab){ window.ctTab[scope] = tab; window.ctPanes(); window.scrollTo({top: 0}); };
+  document.querySelectorAll('.ct-tab').forEach((b) => b.addEventListener('click', () => window.ctSetTab(b.dataset.scope, b.dataset.tab)));
+  document.querySelectorAll('.ct-nsearch').forEach((inp) => inp.addEventListener('input', () => {
+    window.ctNewsQ[inp.dataset.scope] = inp.value.trim().toLowerCase();
+    dash.draw(inp.dataset.scope === 'fed' ? 'fed-news-all' : 'st-news-all');
+  }));
+  const closeComing = () => { const k = window.ctComingKey(window.ctState); if(k){ window.ctDismissed.add(k); saveDismissed(); } window.ctPanes(); window.scrollTo({top: 0}); };
+  document.querySelectorAll('#st-coming-x, #st-coming-done').forEach((b) => b.addEventListener('click', closeComing));
+  document.querySelectorAll('#st-coming-open').forEach((b) => b.addEventListener('click', () => { const k = window.ctComingKey(window.ctState); if(k){ window.ctDismissed.delete(k); saveDismissed(); } window.ctPanes(); window.scrollTo({top: 0}); }));
+  dash.onData(() => window.ctPanes());
+})();
+</script>
+
+<script>
+(function(){
+  function setCount(el, status){
+    const r = dash.data('status_counts');
+    if(r.status !== 'ok' || !r.data){ el.textContent = '—'; return; }
+    const row = r.data.find((d) => d.status === status);
+    el.textContent = row ? String(row.count) : '—';
+  }
+  [['cnt-retail','Retail'],['cnt-med','Medical only'],['cnt-ban','Banned'],['kpi-retail','Retail'],['kpi-med','Medical only'],['kpi-ban','Banned']].forEach(([n, s]) => dash.draw(n, (el) => setCount(el, s)));
+
+  dash.draw('state-pick', (sel) => {
+    const g = dash.data('states');
+    const rows = g.status === 'ok' ? g.data.slice().sort((a, b) => d3.ascending(a.name, b.name)) : [];
+    sel.replaceChildren(new Option('Open a state…', ''), ...rows.map((r) => new Option(r.name, r.code)));
+    sel.value = window.ctState || '';
+    sel.onchange = () => window.ctOpen(sel.value || null);
+  });
+
+  window.ctWater = () => `color-mix(in srgb, ${dash.colors[1]} 16%, var(--color-panel))`;
+  window.ctOther = () => 'color-mix(in srgb, var(--color-fg) 5%, var(--color-panel))';
+  window.ctZoom = function(el, svg, g, made, maxK){
+    const zoom = d3.zoom().scaleExtent([1, maxK])
+      .filter((ev) => ev.type === 'wheel' ? (ev.ctrlKey || ev.metaKey) : (!ev.ctrlKey && !ev.button))
+      .on('zoom', (ev) => { made.k = ev.transform.k; g.attr('transform', ev.transform); window.ctLabelZoom(made); });
+    svg.call(zoom).on('dblclick.zoom', null);
+    const bar = document.createElement('div'); bar.className = 'ct-zbar';
+    [['+', 'Zoom in', () => svg.call(zoom.scaleBy, 1.7)], ['−', 'Zoom out', () => svg.call(zoom.scaleBy, 1 / 1.7)], ['↺', 'Reset view', () => svg.call(zoom.transform, d3.zoomIdentity)]].forEach(([t, l, f]) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'ct-zbtn'; b.textContent = t; b.setAttribute('aria-label', l); b.addEventListener('click', f); bar.appendChild(b);
+    });
+    const hint = document.createElement('div'); hint.className = 'ct-zhint'; hint.textContent = 'Drag to pan · Ctrl/⌘ + scroll or + / − to zoom';
+    el.append(bar, hint);
+    made.zoom = zoom; made.k = 1;
+  };
+  window.ctLabelZoom = function(made){
+    if(!made.gl) return;
+    const k = made.k || 1, base = made.labelBase || 1;
+    made.gl.selectAll('text').style('font-size', (d) => (d.size * base / k) + 'px').style('stroke-width', (3 * base / k) + 'px')
+      .attr('display', (d) => (d.minK || 1) <= k ? null : 'none');
+    if(made.gm) made.gm.selectAll('circle').attr('r', 3.4 / k).style('stroke-width', (1.5 / k) + 'px');
+  };
+  window.ctUpcoming = function(){
+    const g = dash.data('events');
+    const m = new Map();
+    if(g.status !== 'ok') return m;
+    const now = new Date();
+    const t0 = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+    const t1 = t0 + 90 * 864e5;
+    g.data.forEach((r) => {
+      if(!r.state || r.state === 'US') return;
+      let a, b;
+      if(/^\d{4}-\d{2}-\d{2}$/.test(r.date)){ a = Date.parse(r.date + 'T00:00:00Z'); b = a; }
+      else if(/^\d{4}-\d{2}$/.test(r.date)){ a = Date.parse(r.date + '-01T00:00:00Z'); b = a + 30 * 864e5; }
+      else return;
+      if(b < t0 || a > t1) return;
+      if(!m.has(r.state)) m.set(r.state, []);
+      m.get(r.state).push(Object.assign({t: a}, r));
+    });
+    m.forEach((v) => v.sort((x, y) => x.t - y.t));
+    return m;
+  };
+  dash.draw('upcoming-row', (el) => {
+    const up = window.ctUpcoming();
+    const sg = dash.data('states');
+    const names = new Map((sg.status === 'ok' ? sg.data : []).map((s) => [s.code, s.name]));
+    const list = [...up.entries()].sort((a, b) => a[1][0].t - b[1][0].t || d3.ascending(a[0], b[0]));
+    el.replaceChildren(...list.map(([code, evs]) => {
+      const e = evs[0];
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'ct-upitem';
+      b.title = (names.get(code) || code) + ': ' + evs.map((x) => window.ctFmtDate(x.date) + ' — ' + x.event).join('\n');
+      const c = document.createElement('b'); c.textContent = code;
+      const d = document.createElement('span'); d.textContent = window.ctFmtDate(e.date);
+      d.setAttribute('data-source', 'events'); d.setAttribute('data-field', 'date'); d.setAttribute('data-where', 'id=' + e.id);
+      b.append(c, d, document.createTextNode(e.event + (evs.length > 1 ? ' (+' + (evs.length - 1) + ')' : '')));
+      b.addEventListener('click', () => window.ctOpen(code));
+      return b;
+    }));
+    if(!list.length){ const p = document.createElement('p'); p.className = 'ct-empty'; p.textContent = 'No dated state changes in the next 90 days.'; el.appendChild(p); }
+  });
+  window.ctTipAt = function(el, tip, ev, title, line){
+    tip.replaceChildren();
+    const b = document.createElement('b'); b.textContent = title;
+    const s = document.createElement('span'); s.textContent = line;
+    tip.append(b, s); tip.hidden = false;
+    const box = el.getBoundingClientRect();
+    const tr = ev.currentTarget && ev.currentTarget.getBoundingClientRect ? ev.currentTarget.getBoundingClientRect() : box;
+    const px = ev.clientX ? ev.clientX : tr.left + tr.width / 2;
+    const py = ev.clientY ? ev.clientY : tr.top + tr.height / 2;
+    let x = px - box.left - 120; x = Math.max(0, Math.min(x, box.width - 240));
+    tip.style.left = x + 'px'; tip.style.top = (py - box.top + 14) + 'px';
+  };
+  window.ctLabels = function(made, labels){
+    made.gl.selectAll('text').data(labels, (d) => d.key).join('text')
+      .attr('class', (d) => d.cls).attr('x', (d) => d.x).attr('y', (d) => d.y)
+      .attr('text-anchor', 'middle').attr('dominant-baseline', 'central').text((d) => d.text);
+    window.ctLabelZoom(made);
+  };
+
+  dash.draw('map', {
+    mount(el){
+      el.replaceChildren();
+      const tip = document.createElement('div'); tip.className = 'ct-tip'; tip.hidden = true;
+      const svg = d3.select(el).append('svg').attr('viewBox', '0 0 975 610').attr('role', 'group').attr('aria-label', 'Map of U.S. states shaded by cannabis status, with Interstates and major cities. Select a state to open its tab.');
+      const g = svg.append('g');
+      const water = g.append('rect').attr('x', -3000).attr('y', -3000).attr('width', 7000).attr('height', 7000);
+      const land = g.append('path').attr('class', 'ct-land');
+      const gs = g.append('g');
+      const roads = g.append('path').attr('class', 'ct-roads').attr('vector-effect', 'non-scaling-stroke');
+      const gl = g.append('g').attr('class', 'ct-labels');
+      const gm = g.append('g').attr('class', 'ct-upmarks');
+      const made = {svg, g, water, land, gs, roads, gl, gm, tip, labelBase: 1};
+      window.ctZoom(el, svg, g, made, 16);
+      el.appendChild(tip);
+      return made;
+    },
+    update(el, made){
+      made.water.style('fill', window.ctWater());
+      const g = dash.data('states'), sh = dash.data('shapes'), bm = dash.data('basemap');
+      const byCode = new Map((g.status === 'ok' ? g.data : []).map((r) => [r.code, r]));
+      const rows = sh.status === 'ok' ? sh.data.filter((s) => byCode.has(s.code)).map((s) => Object.assign({}, byCode.get(s.code), s)) : [];
+      const base = bm.status === 'ok' ? bm.data : [];
+      const land = base.find((r) => r.layer === 'land'), road = base.find((r) => r.layer === 'roads');
+      made.land.attr('d', land ? land.path : null).style('fill', window.ctOther());
+      made.roads.attr('d', road ? road.path : null);
+      const t = made.gs.selectAll('g.ct-st').data(rows, (d) => d.code).join((enter) => {
+        const gg = enter.append('g').attr('class', 'ct-st').attr('tabindex', 0).attr('role', 'button');
+        gg.append('path').attr('vector-effect', 'non-scaling-stroke');
+        return gg;
+      });
+      t.attr('class', (d) => 'ct-st' + (d.code === window.ctState ? ' ct-sel' : ''))
+       .attr('aria-label', (d) => `${d.name}: ${d.status}`)
+       .attr('data-source', 'states').attr('data-field', 'status').attr('data-where', (d) => 'code=' + d.code);
+      t.select('path').attr('d', (d) => d.path).style('fill', (d) => window.ctColor(d.status));
+      t.filter((d) => d.code === window.ctState).raise();
+      const labels = rows.filter((d) => d.code !== 'DC').map((d) => ({key: 's' + d.code, text: d.code, x: d.cx, y: d.cy, size: 10, minK: 1, cls: 'ct-lbl ct-code'}))
+        .concat(base.filter((r) => r.layer === 'label').map((r) => ({key: 'c' + r.name + r.state, text: r.name, x: r.x, y: r.y + 4, size: 8, minK: r.rank <= 25 ? 1.8 : (r.rank <= 60 ? 3 : 4.5), cls: 'ct-lbl ct-city'})));
+      window.ctLabels(made, labels);
+      const up = window.ctUpcoming();
+      const pts = rows.filter((d) => d.code !== 'DC' && up.has(d.code)).map((d) => ({code: d.code, x: d.cx + 11, y: d.cy - 7}));
+      made.gm.selectAll('circle').data(pts, (d) => d.code).join('circle').attr('class', 'ct-upmark').attr('cx', (d) => d.x).attr('cy', (d) => d.y);
+      window.ctLabelZoom(made);
+      t.attr('aria-label', (d) => `${d.name}: ${d.status}` + (up.has(d.code) ? `. Coming up: ${up.get(d.code)[0].event}` : ''));
+      const tip = made.tip;
+      t.on('mouseenter mousemove focus', (ev, d) => { const u = up.get(d.code); window.ctTipAt(el, tip, ev, d.name, d.status + ' — ' + d.statusNote + (u ? ' · Coming up ' + window.ctFmtDate(u[0].date) + ': ' + u[0].event + (u.length > 1 ? ' (+' + (u.length - 1) + ' more)' : '') : '')); })
+       .on('mouseleave blur', () => { tip.hidden = true; })
+       .on('click', (ev, d) => { tip.hidden = true; window.ctOpen(d.code); })
+       .on('keydown', (ev, d) => { if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); window.ctOpen(d.code); } });
+    }
+  });
+
+  window.ctNewsItem = function(r){
+    const li = document.createElement('li');
+    const h = document.createElement(r.url ? 'a' : 'span');
+    h.className = 'ct-nhead';
+    if(r.url){ h.href = r.url; h.target = '_blank'; h.rel = 'noopener'; }
+    h.textContent = r.headline;
+    h.setAttribute('data-source', 'news'); h.setAttribute('data-field', 'headline'); h.setAttribute('data-where', 'id=' + r.id);
+    li.appendChild(h);
+    if(r.summary){
+      const p = document.createElement('p'); p.className = 'ct-nsum'; p.textContent = r.summary;
+      p.setAttribute('data-source', 'news'); p.setAttribute('data-field', 'summary'); p.setAttribute('data-where', 'id=' + r.id);
+      li.appendChild(p);
+    }
+    const meta = document.createElement('div'); meta.className = 'ct-meta';
+    meta.textContent = (r.source && r.source !== '—' ? r.source + ' · ' : '') + window.ctFmtDate(r.date);
+    li.appendChild(meta);
+    return li;
+  };
+  window.ctNewsList = function(el, code){
+    if(dash.data('news').status !== 'ok'){ el.replaceChildren(); return; }
+    const rows = window.ctNewsRows(code);
+    el.className = 'ct-news';
+    el.replaceChildren(...rows.slice(0, 4).map(window.ctNewsItem));
+    if(rows.length > 4){
+      const li = document.createElement('li'); li.className = 'ct-more';
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'ct-btn';
+      b.textContent = 'See all ' + rows.length + ' stories →';
+      b.addEventListener('click', () => window.ctSetTab(code === 'US' ? 'fed' : 'st', 'news'));
+      li.appendChild(b); el.appendChild(li);
+    }
+    if(!rows.length){ const li = document.createElement('li'); li.className = 'ct-empty'; li.textContent = 'No news stories for this state yet.'; el.appendChild(li); }
+  };
+  window.ctNewsAll = function(el, code, q){
+    if(dash.data('news').status !== 'ok'){ el.replaceChildren(); return; }
+    let rows = window.ctNewsRows(code);
+    if(q) rows = rows.filter((r) => (r.headline + ' ' + (r.summary || '') + ' ' + (r.source || '')).toLowerCase().includes(q));
+    el.replaceChildren(...rows.map(window.ctNewsItem));
+    if(!rows.length){
+      const li = document.createElement('li'); li.className = 'ct-empty';
+      li.textContent = q ? 'No stories match “' + q + '”. Try a different word, or clear the search box.' : 'No news stories for this state yet. The regulator’s website, linked on the Overview tab, is the best place to check.';
+      el.appendChild(li);
+    }
+  };
+  window.ctEventList = function(el, code){
+    const g = dash.data('events');
+    if(g.status !== 'ok'){ el.replaceChildren(); return; }
+    const rank = (d) => /^\d{4}/.test(d) ? 0 : (d === 'Pending' ? 1 : 2);
+    const rows = g.data.filter((r) => r.state === code).sort((a, b) => d3.ascending(rank(a.date), rank(b.date)) || d3.ascending(a.date, b.date));
+    el.replaceChildren(...rows.map((r) => {
+      const li = document.createElement('li');
+      const top = document.createElement('div'); top.className = 'ct-meta';
+      const d = document.createElement('b'); d.textContent = window.ctFmtDate(r.date);
+      d.setAttribute('data-source', 'events'); d.setAttribute('data-field', 'date'); d.setAttribute('data-where', 'id=' + r.id);
+      top.append(d, document.createTextNode(' · ' + r.type));
+      const body = document.createElement(r.url ? 'a' : 'span');
+      if(r.url){ body.href = r.url; body.target = '_blank'; body.rel = 'noopener'; }
+      body.textContent = r.event;
+      body.setAttribute('data-source', 'events'); body.setAttribute('data-field', 'event'); body.setAttribute('data-where', 'id=' + r.id);
+      li.append(top, body);
+      return li;
+    }));
+    if(!rows.length){ const li = document.createElement('li'); li.className = 'ct-empty'; li.textContent = 'No scheduled board meetings or statutory changes found for this state. Check the regulator’s calendar linked above.'; el.appendChild(li); }
+  };
+  window.ctOddsList = function(el, code){
+    const g = dash.data('odds');
+    if(g.status !== 'ok'){ el.replaceChildren(); return; }
+    const rows = g.data.filter((r) => r.state === code).sort((a, b) => d3.descending(+a.probability, +b.probability));
+    el.replaceChildren(...rows.map((r) => {
+      const p = +r.probability;
+      const row = document.createElement('div'); row.className = 'ct-orow';
+      const mv = document.createElement('div'); mv.className = 'ct-omove';
+      mv.textContent = r.move;
+      const hz = document.createElement('div'); hz.className = 'ct-meta'; hz.textContent = 'By ' + r.horizon;
+      mv.appendChild(hz);
+      const pct = document.createElement('div'); pct.className = 'ct-opct';
+      pct.textContent = p + '%';
+      pct.setAttribute('data-source', 'odds'); pct.setAttribute('data-field', 'probability'); pct.setAttribute('data-where', 'id=' + r.id);
+      const bar = document.createElement('div'); bar.className = 'ct-obar';
+      bar.setAttribute('role', 'img'); bar.setAttribute('aria-label', p + ' percent');
+      const fill = document.createElement('i'); fill.style.width = p + '%'; fill.style.background = dash.colors[3];
+      bar.appendChild(fill);
+      const rat = document.createElement('div'); rat.className = 'ct-meta ct-orat'; rat.textContent = r.rationale;
+      row.append(mv, pct, bar, rat);
+      return row;
+    }));
+    if(!rows.length){ const e = document.createElement('div'); e.className = 'ct-empty'; e.textContent = 'No estimates yet.'; el.appendChild(e); }
+  };
+  window.ctPlayerList = function(el, code){
+    const g = dash.data('players');
+    if(g.status !== 'ok'){ el.replaceChildren(); return; }
+    const rows = g.data.filter((r) => r.state === code);
+    el.replaceChildren(...rows.map((r) => {
+      const li = document.createElement('li');
+      const n = document.createElement('b'); n.textContent = r.name;
+      n.setAttribute('data-source', 'players'); n.setAttribute('data-field', 'name'); n.setAttribute('data-where', 'id=' + r.id);
+      const role = document.createElement('div'); role.className = 'ct-meta'; role.textContent = r.role;
+      li.append(n, role);
+      if(r.note){
+        const note = document.createElement(r.url ? 'a' : 'div');
+        if(r.url){ note.href = r.url; note.target = '_blank'; note.rel = 'noopener'; note.style.display = 'block'; }
+        note.textContent = r.note;
+        li.appendChild(note);
+      }
+      const nd = dash.data('news');
+      const said = nd.status === 'ok' ? nd.data.filter((x) => String(x.playerIds || '').split(',').includes(r.id)).sort((a, b) => d3.descending(a.date, b.date)) : [];
+      if(said.length){
+        const lab = document.createElement('div'); lab.className = 'ct-said-lab'; lab.textContent = 'Said or did';
+        const ul = document.createElement('ul'); ul.className = 'ct-said';
+        said.forEach((x) => {
+          const it = document.createElement('li');
+          const a = document.createElement(x.url ? 'a' : 'span');
+          if(x.url){ a.href = x.url; a.target = '_blank'; a.rel = 'noopener'; }
+          a.textContent = x.headline;
+          a.setAttribute('data-source', 'news'); a.setAttribute('data-field', 'headline'); a.setAttribute('data-where', 'id=' + x.id);
+          const m = document.createElement('span'); m.className = 'ct-meta'; m.textContent = ' · ' + window.ctFmtDate(x.date);
+          it.append(a, m);
+          ul.appendChild(it);
+        });
+        li.append(lab, ul);
+      }
+      return li;
+    }));
+  };
+
+  dash.draw('fed-news', (el) => window.ctNewsList(el, 'US'));
+  dash.draw('fed-events', (el) => window.ctEventList(el, 'US'));
+  dash.draw('fed-odds', (el) => window.ctOddsList(el, 'US'));
+  dash.draw('fed-players', (el) => window.ctPlayerList(el, 'US'));
+
+  dash.draw('senate-rows', (tb) => {
+    const g = dash.data('senate');
+    if(g.status !== 'ok'){ tb.replaceChildren(); return; }
+    const rows = g.data.slice().sort((a, b) => d3.ascending(a.stateName, b.stateName));
+    tb.replaceChildren(...rows.map((r) => {
+      const tr = document.createElement('tr'); tr.className = 'ct-click'; tr.setAttribute('data-key', r.state);
+      tr.tabIndex = 0;
+      [r.stateName, r.winner, r.party, r.defeated, r.flip].forEach((v, i) => {
+        const td = document.createElement('td'); td.textContent = v;
+        if(i === 4 && v === 'Yes') td.className = 'ct-flip';
+        tr.appendChild(td);
+      });
+      tr.addEventListener('click', () => window.ctOpen(r.state));
+      tr.addEventListener('keydown', (ev) => { if(ev.key === 'Enter') window.ctOpen(r.state); });
+      return tr;
+    }));
+  });
+
+  function stateRow(){
+    const g = dash.data('states');
+    if(g.status !== 'ok' || !window.ctState) return null;
+    return g.data.find((s) => s.code === window.ctState) || null;
+  }
+  function markState(el, field){
+    if(window.ctState){ el.setAttribute('data-source', 'states'); el.setAttribute('data-field', field); el.setAttribute('data-where', 'code=' + window.ctState); }
+  }
+  dash.draw('st-name', (el) => { const s = stateRow(); el.textContent = s ? s.name : '—'; markState(el, 'name'); });
+  dash.draw('st-status', (el) => {
+    const s = stateRow();
+    el.replaceChildren();
+    if(!s){ el.textContent = '—'; return; }
+    const p = document.createElement('span'); p.className = 'ct-pill';
+    const mk = document.createElement('i'); mk.className = 'ct-sw'; mk.style.background = window.ctColor(s.status);
+    p.append(mk, document.createTextNode(s.status));
+    p.setAttribute('data-source', 'states'); p.setAttribute('data-field', 'status'); p.setAttribute('data-where', 'code=' + s.code);
+    el.appendChild(p);
+  });
+  dash.draw('st-outlook', (el) => { const s = stateRow(); el.textContent = s ? s.outlook : '—'; markState(el, 'outlook'); });
+  dash.draw('st-note', (el) => { const s = stateRow(); el.textContent = s ? s.statusNote : '—'; markState(el, 'statusNote'); });
+  dash.draw('st-gov', (el) => { const s = stateRow(); el.textContent = s ? s.governor : '—'; markState(el, 'governor'); });
+  dash.draw('st-reg', (el) => {
+    const s = stateRow();
+    el.replaceChildren();
+    if(!s){ el.textContent = '—'; return; }
+    const a = document.createElement(s.regulatorUrl ? 'a' : 'span');
+    if(s.regulatorUrl){ a.href = s.regulatorUrl; a.target = '_blank'; a.rel = 'noopener'; }
+    a.textContent = s.regulator;
+    a.setAttribute('data-source', 'states'); a.setAttribute('data-field', 'regulator'); a.setAttribute('data-where', 'code=' + s.code);
+    el.appendChild(a);
+  });
+  dash.draw('st-senate', (el) => {
+    const g = dash.data('senate');
+    el.replaceChildren();
+    if(g.status !== 'ok' || !window.ctState){ el.textContent = '—'; return; }
+    const r = g.data.find((x) => x.state === window.ctState);
+    if(!r){ el.textContent = 'No Senate race in 2026.'; return; }
+    const w = document.createElement('b'); w.textContent = r.winner + ' (' + r.party + ')';
+    w.setAttribute('data-source', 'senate'); w.setAttribute('data-field', 'winner'); w.setAttribute('data-where', 'state=' + r.state);
+    el.append(w, document.createTextNode(' defeated ' + r.defeated + (r.flip === 'Yes' ? ' — seat flipped. ' : '. ')));
+    const n = document.createElement('span'); n.className = 'ct-meta'; n.textContent = r.note;
+    el.appendChild(n);
+  });
+  dash.draw('st-players', (el) => { if(window.ctState) window.ctPlayerList(el, window.ctState); else el.replaceChildren(); });
+  dash.draw('st-news', (el) => { if(window.ctState) window.ctNewsList(el, window.ctState); else el.replaceChildren(); });
+  dash.draw('st-events', (el) => { if(window.ctState) window.ctEventList(el, window.ctState); else el.replaceChildren(); });
+  dash.draw('st-odds', (el) => { if(window.ctState) window.ctOddsList(el, window.ctState); else el.replaceChildren(); });
+  dash.draw('fed-news-all', (el) => window.ctNewsAll(el, 'US', window.ctNewsQ.fed));
+  dash.draw('st-news-all', (el) => { if(window.ctState) window.ctNewsAll(el, window.ctState, window.ctNewsQ.st); else el.replaceChildren(); });
+  dash.draw('st-news-name', (el) => { const s = stateRow(); el.textContent = s ? s.name : ''; markState(el, 'name'); });
+  dash.draw('st-coming', (el) => {
+    el.replaceChildren();
+    const s = stateRow();
+    if(!s) return;
+    const up = window.ctUpcoming().get(s.code) || [];
+    if(!up.length) return;
+    const h = document.createElement('h2'); h.textContent = 'Coming up in ' + s.name;
+    const p = document.createElement('p'); p.className = 'ct-lede';
+    p.textContent = (up.length === 1 ? 'One dated change or meeting is' : up.length + ' dated changes or meetings are') + ' expected in the next 90 days. Here is what to watch for, with the source for each.';
+    const ul = document.createElement('ul'); ul.className = 'ct-clist';
+    let monthOnly = false;
+    up.forEach((e) => {
+      const li = document.createElement('li');
+      const d = document.createElement('div'); d.className = 'ct-cdate'; d.textContent = window.ctFmtDate(e.date);
+      d.setAttribute('data-source', 'events'); d.setAttribute('data-field', 'date'); d.setAttribute('data-where', 'id=' + e.id);
+      if(/^\d{4}-\d{2}$/.test(e.date)) monthOnly = true;
+      const body = document.createElement('div');
+      const ev = document.createElement('div'); ev.className = 'ct-cevent'; ev.textContent = e.event;
+      ev.setAttribute('data-source', 'events'); ev.setAttribute('data-field', 'event'); ev.setAttribute('data-where', 'id=' + e.id);
+      const ty = document.createElement('div'); ty.className = 'ct-meta'; ty.textContent = e.type;
+      body.append(ev, ty);
+      const src = document.createElement('div'); src.className = 'ct-meta';
+      const link = e.url || s.regulatorUrl;
+      if(link){
+        let host = ''; try { host = new URL(link).hostname.replace(/^www\./, ''); } catch(x) {}
+        const a = document.createElement('a'); a.href = link; a.target = '_blank'; a.rel = 'noopener';
+        a.textContent = e.url ? host : 'the regulator’s website';
+        src.append(document.createTextNode('Source: '), a);
+        body.appendChild(src);
+      }
+      li.append(d, body);
+      ul.appendChild(li);
+    });
+    el.append(h, p, ul);
+    if(monthOnly){ const n = document.createElement('p'); n.className = 'ct-meta'; n.textContent = 'A month with no day (for example “Jan 2027”) means the exact day has not been announced.'; el.appendChild(n); }
+  });
+
+  dash.draw('st-path', (el) => {
+    const g = dash.data('pathways');
+    el.replaceChildren();
+    if(g.status !== 'ok' || !window.ctState) return;
+    const rows = g.data.filter((r) => r.state === window.ctState);
+    if(!rows.length) return;
+    const goal = document.createElement('div'); goal.className = 'ct-path-goal'; goal.textContent = 'To become: ' + rows[0].goal;
+    el.appendChild(goal);
+    rows.forEach((r) => {
+      const box = document.createElement('div'); box.className = 'ct-route';
+      const left = document.createElement('div');
+      const nm = document.createElement('div'); nm.className = 'ct-route-name'; nm.textContent = r.route;
+      left.appendChild(nm);
+      const PILL = {'Yes': ['Available', 0], 'No': ['Not available', 4], 'Not required': ['Not required', 0], 'Required': ['Required', 2]};
+      if(PILL[r.available]){
+        const p = document.createElement('span'); p.className = 'ct-pill';
+        const mk = document.createElement('i'); mk.className = 'ct-sw'; mk.style.background = dash.colors[PILL[r.available][1]];
+        p.append(mk, document.createTextNode(PILL[r.available][0]));
+        p.setAttribute('data-source', 'pathways'); p.setAttribute('data-field', 'available'); p.setAttribute('data-where', 'id=' + r.id);
+        left.appendChild(p);
+      }
+      const right = document.createElement('div');
+      const t = document.createElement('div'); t.textContent = r.requirement;
+      t.setAttribute('data-source', 'pathways'); t.setAttribute('data-field', 'requirement'); t.setAttribute('data-where', 'id=' + r.id);
+      right.appendChild(t);
+      if(r.source){ const a = document.createElement('a'); a.href = r.source; a.target = '_blank'; a.rel = 'noopener'; a.className = 'ct-meta'; a.textContent = 'Source'; right.appendChild(a); }
+      box.append(left, right);
+      el.appendChild(box);
+    });
+  });
+
+  const MUNI_ORDER = ['Adult-Use','Adult-Use Capped','Medical','Upcoming','Moratorium','Banned','No Regulations'];
+  window.ctMuniStyle = function(status){
+    const c = {'Adult-Use': dash.colors[0], 'Adult-Use Capped': dash.colors[0], 'Medical': dash.colors[1], 'Banned': dash.colors[2], 'Moratorium': dash.colors[5], 'Upcoming': dash.colors[5], 'No Regulations': dash.colors[4]}[status] || dash.colors[4];
+    return {color: c, hollow: status === 'Adult-Use Capped' || status === 'Upcoming'};
+  };
+  function muniRows(){
+    const g = dash.data('munis');
+    return (g.status === 'ok' && window.ctState) ? g.data.filter((r) => r.state === window.ctState) : null;
+  }
+  dash.draw('muni-legend', (el) => {
+    const rows = muniRows();
+    el.replaceChildren();
+    if(!rows || !rows.length) return;
+    const counts = d3.rollup(rows, (v) => v.length, (d) => d.status);
+    MUNI_ORDER.filter((s) => counts.has(s)).forEach((s) => {
+      const st = window.ctMuniStyle(s);
+      const sp = document.createElement('span');
+      const sw = document.createElement('i'); sw.className = 'ct-sw' + (st.hollow ? ' ct-hollow' : '');
+      sw.style.background = st.color; sw.style.color = st.color;
+      sp.append(sw, document.createTextNode(s + ' (' + counts.get(s) + ')'));
+      el.appendChild(sp);
+    });
+  });
+  dash.draw('st-muni', {
+    mount(el){
+      el.replaceChildren();
+      const tip = document.createElement('div'); tip.className = 'ct-tip'; tip.hidden = true;
+      const msg = document.createElement('p'); msg.className = 'ct-empty'; msg.hidden = true;
+      const svg = d3.select(el).append('svg').attr('role', 'group').attr('aria-label', 'Map of municipalities shaded by local cannabis status');
+      const g = svg.append('g');
+      const water = g.append('rect').attr('x', -3000).attr('y', -3000).attr('width', 7000).attr('height', 7000);
+      const land = g.append('path').attr('class', 'ct-land');
+      const sfill = g.append('path').attr('class', 'ct-sfill');
+      const base = g.append('path').attr('class', 'ct-mbase').attr('vector-effect', 'non-scaling-stroke');
+      const gp = g.append('g');
+      const cty = g.append('path').attr('class', 'ct-mcounty').attr('vector-effect', 'non-scaling-stroke');
+      const roads = g.append('path').attr('class', 'ct-roads').attr('vector-effect', 'non-scaling-stroke');
+      const sline = g.append('path').attr('class', 'ct-sline').attr('vector-effect', 'non-scaling-stroke');
+      const gl = g.append('g').attr('class', 'ct-labels');
+      const made = {svg, g, water, land, sfill, base, gp, cty, roads, sline, gl, tip, msg, labelBase: 1};
+      window.ctZoom(el, svg, g, made, 40);
+      el.append(msg, tip);
+      return made;
+    },
+    update(el, made){
+      const rows = muniRows();
+      const tools = el.querySelectorAll('.ct-zbar, .ct-zhint');
+      if(rows && !rows.length){
+        made.svg.style('display', 'none'); made.msg.hidden = false;
+        tools.forEach((t) => { t.hidden = true; });
+        el.classList.remove('ct-mapframe');
+        made.msg.textContent = 'No local data for this state yet.';
+        return;
+      }
+      made.svg.style('display', null); made.msg.hidden = true;
+      tools.forEach((t) => { t.hidden = false; });
+      el.classList.add('ct-mapframe');
+      const sh = dash.data('shapes'), mg = dash.data('munigeo'), co = dash.data('counties'), bm = dash.data('basemap');
+      if(!rows || sh.status !== 'ok' || mg.status !== 'ok' || co.status !== 'ok' || bm.status !== 'ok') return;
+      const st = window.ctState;
+      const shape = sh.data.find((s) => s.code === st);
+      if(!shape) return;
+      made.water.style('fill', window.ctWater());
+      const land = bm.data.find((r) => r.layer === 'land'), road = bm.data.find((r) => r.layer === 'roads');
+      made.land.attr('d', land ? land.path : null).style('fill', window.ctOther());
+      made.roads.attr('d', road ? road.path : null);
+      made.sfill.attr('d', shape.path); made.sline.attr('d', shape.path);
+      if(made.key !== st){
+        let bb; try { bb = made.sfill.node().getBBox(); } catch(e) { bb = null; }
+        if(!bb || !bb.width) return;
+        const pad = Math.max(bb.width, bb.height) * 0.05;
+        made.svg.attr('viewBox', [bb.x - pad, bb.y - pad, bb.width + pad * 2, bb.height + pad * 2].join(' '));
+        made.labelBase = (Math.max(bb.width, bb.height) + pad * 2) / Math.max(320, el.clientWidth || 800);
+        made.svg.call(made.zoom.transform, d3.zoomIdentity);
+        made.key = st;
+      }
+      const geo = new Map();
+      mg.data.forEach((r) => { if(r.state === st) geo.set(r.geoid, r.path); });
+      const ctys = co.data.filter((c) => c.state === st);
+      ctys.forEach((c) => { if(!geo.has(c.geoid)) geo.set(c.geoid, c.path); });
+      const tracked = new Set(rows.map((r) => r.geoid));
+      made.base.attr('d', mg.data.filter((r) => r.state === st && r.kind === 'cousub' && !tracked.has(r.geoid)).map((r) => r.path).join(''));
+      made.cty.attr('d', ctys.map((c) => c.path).join(''));
+      const kindOrd = {county: 0, cousub: 1, place: 2};
+      const data = rows.filter((r) => geo.has(r.geoid)).sort((a, b) => (kindOrd[a.kind] - kindOrd[b.kind]) || ((a.status === 'No Regulations' ? 0 : 1) - (b.status === 'No Regulations' ? 0 : 1)));
+      const p = made.gp.selectAll('path').data(data, (d) => d.id).join((enter) => enter.append('path').attr('vector-effect', 'non-scaling-stroke'));
+      p.order();
+      p.attr('d', (d) => geo.get(d.geoid)).attr('class', (d) => 'ct-mpoly' + (d.id === window.ctMuni ? ' ct-on' : ''))
+       .attr('data-source', 'munis').attr('data-field', 'status').attr('data-where', (d) => 'id=' + d.id)
+       .each(function(d){
+         const s = window.ctMuniStyle(d.status);
+         this.style.fill = s.color;
+         this.style.fillOpacity = s.hollow ? '0.18' : '0.55';
+         this.style.stroke = s.hollow ? s.color : 'var(--color-panel)';
+         this.style.strokeWidth = s.hollow ? '1.2' : '0.6';
+       });
+      p.filter((d) => d.id === window.ctMuni).raise();
+      const labels = bm.data.filter((r) => r.layer === 'label' && r.state === st).map((r) => ({key: 'c' + r.name, text: r.name, x: r.x, y: r.y, size: 11, minK: 1, cls: 'ct-lbl ct-city'}))
+        .concat(ctys.map((c) => ({key: 'k' + c.geoid, text: c.name, x: c.x, y: c.y, size: 8, minK: 2.2, cls: 'ct-lbl ct-ctylbl'})));
+      window.ctLabels(made, labels);
+      const tip = made.tip;
+      p.on('mouseenter mousemove', (ev, d) => window.ctTipAt(el, tip, ev, d.town + (d.type ? ' (' + d.type + ')' : ''), d.status + (d.county ? ' · ' + d.county + ' County' : '')))
+       .on('mouseleave', () => { tip.hidden = true; })
+       .on('click', (ev, d) => { window.ctMuni = d.id; dash.draw('muni-detail'); dash.draw('st-muni'); });
+    }
+  });
+  dash.draw('muni-detail', (el) => {
+    el.replaceChildren();
+    const rows = muniRows();
+    const d = rows && window.ctMuni ? rows.find((r) => r.id === window.ctMuni) : null;
+    if(!d){ if(rows && rows.length){ const p = document.createElement('p'); p.className = 'ct-meta'; p.textContent = 'Select an area to see the town’s status, ordinance and moratorium details.'; el.appendChild(p); } return; }
+    const h = document.createElement('div'); h.className = 'ct-sthead';
+    const n = document.createElement('b'); n.textContent = d.town + (d.type ? ' (' + d.type + ')' : '');
+    n.setAttribute('data-source', 'munis'); n.setAttribute('data-field', 'town'); n.setAttribute('data-where', 'id=' + d.id);
+    const st = window.ctMuniStyle(d.status);
+    const p = document.createElement('span'); p.className = 'ct-pill';
+    const mk = document.createElement('i'); mk.className = 'ct-sw' + (st.hollow ? ' ct-hollow' : ''); mk.style.background = st.color; mk.style.color = st.color;
+    p.append(mk, document.createTextNode(d.status));
+    p.setAttribute('data-source', 'munis'); p.setAttribute('data-field', 'status'); p.setAttribute('data-where', 'id=' + d.id);
+    h.append(n, p); el.appendChild(h);
+    const dl = document.createElement('dl'); dl.className = 'ct-dl'; dl.style.marginTop = '8px';
+    const add = (label, field, val, link) => {
+      if(!val) return;
+      const dt = document.createElement('dt'); dt.textContent = label;
+      const dd = document.createElement('dd');
+      const v = document.createElement(link ? 'a' : 'span');
+      if(link){ v.href = val; v.target = '_blank'; v.rel = 'noopener'; v.textContent = 'Open ordinance'; } else v.textContent = val;
+      v.setAttribute('data-source', 'munis'); v.setAttribute('data-field', field); v.setAttribute('data-where', 'id=' + d.id);
+      dd.appendChild(v); dl.append(dt, dd);
+    };
+    add('County', 'county', d.county);
+    add('Latest', 'headline', d.headline);
+    add('Ordinance no.', 'ordinanceNo', d.ordinanceNo);
+    add('Adopted', 'adopted', d.adopted ? window.ctFmtDate(d.adopted) : '');
+    add('Moratorium expires', 'moratoriumExpires', d.moratoriumExpires ? window.ctFmtDate(d.moratoriumExpires) : '');
+    add('Local ballot question', 'ballot', d.ballot);
+    add('Ordinance', 'ordinance', d.ordinance, true);
+    if(d.source){ const dt = document.createElement('dt'); dt.textContent = 'Source'; const dd = document.createElement('dd'); const a = document.createElement('a'); a.href = d.source; a.target = '_blank'; a.rel = 'noopener'; a.textContent = d.origin === 'Claude research' ? 'Official state source' : 'Source'; a.setAttribute('data-source', 'munis'); a.setAttribute('data-field', 'source'); a.setAttribute('data-where', 'id=' + d.id); dd.appendChild(a); dl.append(dt, dd); }
+    add('Tracker updated', 'updated', d.updated ? window.ctFmtDate(d.updated) : '');
+    el.appendChild(dl);
+  });
+
+  const m = (location.hash || '').match(/^#state-([A-Z]{2})$/);
+  if(m) window.ctOpen(m[1]);
+})();
+</script>
