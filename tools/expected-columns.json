@@ -1,0 +1,14 @@
+{
+  "states": ["code", "name", "status"],
+  "shapes": ["code", "path"],
+  "basemap": ["layer"],
+  "events": ["id", "state", "date", "event"],
+  "news": ["id", "date", "headline"],
+  "odds": ["id", "state", "move", "probability"],
+  "players": ["id", "state", "name"],
+  "senate": ["state", "stateName", "winner"],
+  "pathways": ["id", "state", "route"],
+  "munis": ["id", "state", "geoid", "status", "town"],
+  "munigeo": ["state", "geoid", "path"],
+  "counties": ["state", "geoid", "path"]
+}
