@@ -1,0 +1,232 @@
+/*
+ * Design tokens and base styles for the standalone tracker.
+ *
+ * Inside Claude, the dashboard framework supplies these custom properties and
+ * fills them from the tracker's saved look ("Tenax Civic"). This file supplies
+ * the same names so the tracker's own page (page/index.html) renders unchanged.
+ *
+ * COLORS, FONTS, TEXT SIZES and CORNERS below are copied from the tracker's
+ * saved look. SPACING (--cds-gap-*, --cds-pad-*) and the medium font weight are
+ * approximations: the framework's own values are not published. Adjust them
+ * here if the standalone page looks tighter or looser than the tracker.
+ */
+
+/* Open-licensed faces for readers who do not have the brand fonts installed.
+   Avenir stays first in the text stack, so readers who have it still get it. */
+@font-face {
+  font-family: "Cormorant";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url(fonts/cormorant-latin-ext-wght-normal.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Cormorant";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url(fonts/cormorant-latin-wght-normal.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 1000;
+  src: url(fonts/nunito-sans-latin-ext-wght-normal.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 1000;
+  src: url(fonts/nunito-sans-latin-wght-normal.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  color-scheme: light dark;
+
+  /* ---- From the tracker's look: light theme ---- */
+  --color-bg: #F4F5F7;            /* ground */
+  --color-panel: #FFFFFF;         /* card */
+  --color-fg: #1A1A1A;            /* text */
+  --color-fg-muted: #5B626C;      /* muted */
+  --color-border-line: #D3D7DD;   /* border */
+  --color-ok: #1F6B45;            /* good */
+  --color-warn: #8A5A00;          /* warning */
+  --color-bad: #A50A26;           /* bad */
+  --dash-c0: #2E8A5B;
+  --dash-c1: #3A6EA8;
+  --dash-c2: #C60C2E;
+  --dash-c3: #272B31;
+  --dash-c4: #8A919B;
+  --dash-c5: #C98A00;
+  --dash-shadow: 0 4px 16px rgb(0 0 0 / 0.14);
+
+  /* ---- From the tracker's look: type and corners ---- */
+  --font-anthropic-sans: Avenir, "Avenir Next", "Nunito Sans", system-ui, sans-serif;
+  --font-anthropic-serif: Cormorant, "Cormorant Garamond", Georgia, serif;
+  --cds-font-size-caption: 12px;
+  --cds-font-size-body: 13px;
+  --cds-font-size-heading: 15px;
+  --cds-font-size-title: 40px;
+  --cds-radius: 0px;
+
+  /* ---- Approximations (see note at the top of this file) ---- */
+  --cds-font-weight-medium: 500;
+  --cds-gap-xs: 4px;
+  --cds-gap-sm: 8px;
+  --cds-gap-md: 12px;
+  --cds-gap-lg: 16px;
+  --cds-gap-xl: 24px;
+  --cds-pad-xs: 4px;
+  --cds-pad-sm: 8px;
+  --cds-pad-md: 12px;
+  --cds-pad-lg: 16px;
+  --cds-pad-xl: 24px;
+  --dash-gutter: 24px;
+  --dash-max-width: 1240px;
+
+  /* ---- Derived, as the framework derives them from the colors above ---- */
+  --dash-c6: var(--dash-c0);
+  --dash-c7: var(--dash-c1);
+  --cds-surface-popover: var(--color-panel);
+  --cds-border: var(--color-border-line);
+  --cds-shadow-popover: var(--dash-shadow);
+  --cds-text-secondary: var(--color-fg-muted);
+  --cds-chart-grid: color-mix(in srgb, var(--color-fg) 10%, var(--color-panel));
+  --cds-chart-axis: color-mix(in srgb, var(--color-fg) 28%, var(--color-panel));
+  --cds-chart-muted: var(--dash-c4);
+  --cds-chart-reference: var(--color-fg-muted);
+  --cds-chart-status-critical: var(--color-bad);
+  --cds-dur-slow: 400ms;
+  --cds-ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ---- From the tracker's look: dark theme (follows the reader's device) ---- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0F1113;
+    --color-panel: #17191C;
+    --color-fg: #F4F5F7;
+    --color-fg-muted: #9AA1AB;
+    --color-border-line: #2E3238;
+    --color-ok: #7BD3A1;
+    --color-warn: #F2C14E;
+    --color-bad: #F28A99;
+    --dash-c0: #3FAE74;
+    --dash-c1: #5A8FCB;
+    --dash-c2: #EC5A70;
+    --dash-c3: #F4F5F7;
+    --dash-c4: #7C838D;
+    --dash-c5: #D9A21E;
+    --dash-shadow: 0 4px 16px rgb(0 0 0 / 0.5);
+  }
+}
+
+/* Print always uses the light theme. */
+@media print {
+  :root {
+    color-scheme: light;
+    --color-bg: #F4F5F7;
+    --color-panel: #FFFFFF;
+    --color-fg: #1A1A1A;
+    --color-fg-muted: #5B626C;
+    --color-border-line: #D3D7DD;
+    --color-ok: #1F6B45;
+    --color-warn: #8A5A00;
+    --color-bad: #A50A26;
+    --dash-c0: #2E8A5B;
+    --dash-c1: #3A6EA8;
+    --dash-c2: #C60C2E;
+    --dash-c3: #272B31;
+    --dash-c4: #8A919B;
+    --dash-c5: #C98A00;
+  }
+}
+
+/* ---- Base styles the framework would otherwise set ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-anthropic-sans);
+  font-size: var(--cds-font-size-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#dash-root {
+  max-width: var(--dash-max-width);
+  margin: 0 auto;
+  padding: var(--dash-gutter);
+}
+
+@media (max-width: 560px) {
+  :root { --dash-gutter: 14px; }
+}
+
+#dash-root a { color: inherit; text-underline-offset: 2px; }
+#dash-root summary { cursor: pointer; }
+#dash-root [hidden] { display: none !important; }
+
+/* The one control class the framework styles for a page. */
+.dash-select {
+  font: inherit;
+  color: var(--color-fg);
+  background-color: var(--color-panel);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%237C838D' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  border: 1px solid var(--color-border-line);
+  border-radius: var(--cds-radius);
+  padding: 6px 32px 6px 12px;
+  max-width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Placeholder class the framework offers; the page removes it when data arrives. */
+.dash-skeleton {
+  color: transparent !important;
+  background: var(--cds-chart-grid);
+  border-radius: var(--cds-radius);
+  min-height: 1em;
+}
+.dash-skeleton > * { visibility: hidden; }
+
+/* ---- Messages from the standalone runtime itself ---- */
+.dash-boot,
+.dash-note {
+  max-width: var(--dash-max-width);
+  margin: 0 auto;
+  padding: var(--dash-gutter);
+  color: var(--color-fg-muted);
+}
+.dash-note {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border-line);
+  background: var(--color-panel);
+  color: var(--color-fg);
+  max-width: none;
+  text-align: center;
+}
+.dash-foot {
+  max-width: var(--dash-max-width);
+  margin: 0 auto;
+  padding: 0 var(--dash-gutter) var(--dash-gutter);
+  color: var(--color-fg-muted);
+  font-size: var(--cds-font-size-caption);
+}
+@media print {
+  .dash-note { display: none; }
+}
