@@ -1,0 +1,1650 @@
+[
+{
+"id": "p1",
+"state": "US",
+"name": "Donald Trump",
+"role": "President",
+"note": "Signed EO 14370 (Dec 2025) directing rescheduling; signed the Sept 2026 hemp-ban delay",
+"url": ""
+},
+{
+"id": "p2",
+"state": "US",
+"name": "Todd Blanche",
+"role": "Acting Attorney General",
+"note": "Signed the April 2026 order moving state-licensed medical marijuana to Schedule III",
+"url": "https://www.justice.gov/opa/pr/justice-department-places-fda-approved-marijuana-products-and-products-containing-marijuana"
+},
+{
+"id": "p3",
+"state": "US",
+"name": "Terrance Cole",
+"role": "DEA Administrator",
+"note": "Makes the final call on broader rescheduling; can adopt or reject the ALJ's recommendation",
+"url": "https://natlawreview.com/article/inside-dea-marijuana-rescheduling-hearing-five-fights-will-decide-case"
+},
+{
+"id": "p4",
+"state": "US",
+"name": "Derek C. Julius",
+"role": "DEA Chief Administrative Law Judge",
+"note": "Presided over the June–July hearing; recommendation pending",
+"url": "https://www.marijuanamoment.net/dea-files-final-brief-in-cannabis-rescheduling-hearing-newsletter-november-9-2026/"
+},
+{
+"id": "p5",
+"state": "US",
+"name": "Chuck Schumer (D-NY)",
+"role": "Senate Democratic leader",
+"note": "CAOA lead; competing with Van Hollen to be majority leader",
+"url": "https://www.marijuanamoment.net/schumer-vs-van-hollen-on-cannabis-newsletter-november-17-2026/"
+},
+{
+"id": "p6",
+"state": "US",
+"name": "Chris Van Hollen (D-MD)",
+"role": "Senator; majority-leader candidate",
+"note": "Supports federal legalization",
+"url": "https://www.marijuanamoment.net/schumer-vs-van-hollen-on-cannabis-newsletter-november-17-2026/"
+},
+{
+"id": "p7",
+"state": "US",
+"name": "Hakeem Jeffries (D-NY)",
+"role": "Incoming House Speaker",
+"note": "Previously teamed with Schumer on a legalization bill",
+"url": "https://www.marijuanamoment.net/federal-cannabis-reform-gets-democratic-boost-newsletter-november-5-2026/"
+},
+{
+"id": "p8",
+"state": "US",
+"name": "John Thune (R-SD)",
+"role": "Senate GOP conference leader",
+"note": "Long record opposing reform",
+"url": "https://www.marijuanamoment.net/dea-rejects-cannabis-business-registrations-in-multiple-states-newsletter-november-12-2026/"
+},
+{
+"id": "p9",
+"state": "US",
+"name": "Jim Jordan (R-OH)",
+"role": "House GOP conference leader",
+"note": "Long record opposing reform",
+"url": "https://www.marijuanamoment.net/dea-rejects-cannabis-business-registrations-in-multiple-states-newsletter-november-12-2026/"
+},
+{
+"id": "p10",
+"state": "US",
+"name": "Jeff Merkley (D-OR)",
+"role": "Senator",
+"note": "Lead sponsor, SAFE Banking Act of 2026 (with Murkowski, Daines, Warren)",
+"url": "https://www.merkley.senate.gov/merkley-bipartisan-senators-reintroduce-cannabis-banking-reform/"
+},
+{
+"id": "p11",
+"state": "US",
+"name": "David Joyce (R-OH)",
+"role": "Representative",
+"note": "Lead House sponsor, SAFE Banking Act of 2026",
+"url": "https://www.merkley.senate.gov/merkley-bipartisan-senators-reintroduce-cannabis-banking-reform/"
+},
+{
+"id": "p12",
+"state": "US",
+"name": "Cory Booker (D-NJ) & Ron Wyden (D-OR)",
+"role": "Senators",
+"note": "Lead sponsors of the Cannabis Administration and Opportunity Act",
+"url": "https://govinfo.gov/app/details/BILLS-119s5022is"
+},
+{
+"id": "p13",
+"state": "US",
+"name": "Amy Klobuchar (D-MN)",
+"role": "Senator / MN governor-elect",
+"note": "Seeking a bipartisan fix to keep hemp-THC products legal",
+"url": "https://www.marijuanamoment.net/schumer-vs-van-hollen-on-cannabis-newsletter-november-17-2026/"
+},
+{
+"id": "p14",
+"state": "US",
+"name": "Pete Ricketts (R-NE)",
+"role": "Senator",
+"note": "Opposes any further delay of hemp-THC recriminalization",
+"url": "https://www.marijuanamoment.net/partial-federal-hemp-product-ban-takes-effect-newsletter-november-13-2026/"
+},
+{
+"id": "p15",
+"state": "US",
+"name": "Andy Harris (R-MD)",
+"role": "Representative",
+"note": "Pushing Congress to close the hemp 'loophole'",
+"url": "https://www.marijuanamoment.net/senate-panel-pushes-to-extend-federal-medical-cannabis-protections-newsletter-november-16-2026/"
+},
+{
+"id": "p16",
+"state": "US",
+"name": "Angie Craig (D-MN) & Andy Barr (R-KY)",
+"role": "Representatives",
+"note": "Sponsors of a federal hemp regulatory framework",
+"url": "https://www.akerman.com/en/perspectives/congress-approves-one-month-delay-of-federal-hemp-thc-restrictions.html"
+},
+{
+"id": "p17",
+"state": "US",
+"name": "Dina Titus (D-NV)",
+"role": "Cannabis Caucus co-chair",
+"note": "Wants decriminalization at minimum, descheduling at maximum",
+"url": "https://www.marijuanamoment.net/bipartisan-cooperation-could-boost-federal-cannabis-reform-newsletter-november-6-2026/"
+},
+{
+"id": "p18",
+"state": "US",
+"name": "James Talarico (D-TX)",
+"role": "Senator-elect",
+"note": "Plans to work with Trump on federal legalization and expungement",
+"url": "https://www.marijuanamoment.net/federal-cannabis-reform-gets-democratic-boost-newsletter-november-5-2026/"
+},
+{
+"id": "p19",
+"state": "AL",
+"name": "John McMillan",
+"role": "AMCC Director",
+"note": "Oversees dispensary rollout",
+"url": "https://amcc.alabama.gov/?p=3447"
+},
+{
+"id": "p20",
+"state": "AL",
+"name": "Sam Blakemore",
+"role": "AMCC Chair",
+"note": "",
+"url": "https://www.newsfromthestates.com/node/424811"
+},
+{
+"id": "p21",
+"state": "AZ",
+"name": "Sean Noble",
+"role": "Repeal campaign leader",
+"note": "Dropped the 2026 repeal initiative",
+"url": "https://norml.org/blog/2026/05/07/arizona-campaign-abandons-effort-to-place-marijuana-repeal-measure-on-novembers-ballot/"
+},
+{
+"id": "p22",
+"state": "CT",
+"name": "Brandon L. McGee Jr.",
+"role": "CEO, Social Equity Council",
+"note": "Gains new oversight of equity joint ventures",
+"url": "https://portal.ct.gov/-/media/social-equity-council/sec_annual_report_final_online.pdf"
+},
+{
+"id": "p23",
+"state": "CO",
+"name": "Jared Polis (D)",
+"role": "Outgoing governor",
+"note": "Granted additional marijuana pardons in Nov 2026",
+"url": "https://www.marijuanamoment.net/senate-panel-pushes-to-extend-federal-medical-cannabis-protections-newsletter-november-16-2026/"
+},
+{
+"id": "p24",
+"state": "DE",
+"name": "Josh Sanderlin",
+"role": "Marijuana Commissioner",
+"note": "Rejected 19 'predatory' social-equity applicants",
+"url": "https://mjbizdaily.com/?p=615593"
+},
+{
+"id": "p25",
+"state": "FL",
+"name": "James Uthmeier (R)",
+"role": "Attorney General (re-elected)",
+"note": "Opposed past legalization initiatives",
+"url": "https://weartv.com/news/nation-world/fact-check-team-massachusetts-voters-reject-effort-to-roll-back-recreational-marijuana-legalization-laws"
+},
+{
+"id": "p26",
+"state": "FL",
+"name": "Byron Donalds (R)",
+"role": "Governor-elect",
+"note": "Opposes recreational; says the medical system 'is fine'",
+"url": "https://www.wlrn.org/government-politics/2026-05-07/most-major-fl-gubernatorial-candidates-say-state-should-never-legalize-recreational-marijuana"
+},
+{
+"id": "p27",
+"state": "GA",
+"name": "Brian Kemp (R)",
+"role": "Outgoing governor",
+"note": "Signed SB 220 expanding medical cannabis",
+"url": "https://www.fox5atlanta.com/news/medical-cannabis-kemp-signs-sb-220-law"
+},
+{
+"id": "p28",
+"state": "IA",
+"name": "Rob Sand (D)",
+"role": "Governor-elect",
+"note": "Wants to legalize, tax like alcohol, and fund schools",
+"url": "https://www.marijuanamoment.net/dea-rejects-cannabis-business-registrations-in-multiple-states-newsletter-november-12-2026/"
+},
+{
+"id": "p29",
+"state": "IL",
+"name": "JB Pritzker (D)",
+"role": "Governor",
+"note": "Wants federal hemp-THC ban in force without delay",
+"url": "https://www.marijuanamoment.net/bipartisan-cooperation-could-boost-federal-cannabis-reform-newsletter-november-6-2026/"
+},
+{
+"id": "p30",
+"state": "IN",
+"name": "Mike Braun (R)",
+"role": "Governor",
+"note": "Says federal rescheduling makes legalization 'more likely'",
+"url": "https://www.marijuanamoment.net/indiana-gop-senator-announces-new-bill-to-legalize-medical-marijuana-in-the-state/"
+},
+{
+"id": "p31",
+"state": "IN",
+"name": "Micah Beckwith (R)",
+"role": "Lieutenant Governor",
+"note": "Open to a medical cannabis conversation",
+"url": "https://mirrorindy.org/medical-marijuana-indiana-republicans-show-openness-to-limited-legalization-as-bohacek-prepares-bill/"
+},
+{
+"id": "p32",
+"state": "IN",
+"name": "Sen. Mike Bohacek (R)",
+"role": "State Senator",
+"note": "Drafting a 2027 medical legalization bill",
+"url": "https://mirrorindy.org/?p=82406"
+},
+{
+"id": "p33",
+"state": "KS",
+"name": "Cindy Holscher (D)",
+"role": "Governor-elect",
+"note": "Supports legalization; says rescheduling may soften GOP",
+"url": "https://www.marijuanamoment.net/senate-panel-pushes-to-extend-federal-medical-cannabis-protections-newsletter-november-16-2026/"
+},
+{
+"id": "p34",
+"state": "KY",
+"name": "Andy Beshear (D)",
+"role": "Governor",
+"note": "Urging Congress to pass cannabis banking",
+"url": "https://www.marijuanamoment.net/schumer-vs-van-hollen-on-cannabis-newsletter-november-17-2026/"
+},
+{
+"id": "p35",
+"state": "KY",
+"name": "Jacqueline Coleman (D)",
+"role": "Lieutenant Governor",
+"note": "Announced 30,000+ medical cardholders",
+"url": "https://www.marijuanamoment.net/dea-files-final-brief-in-cannabis-rescheduling-hearing-newsletter-november-9-2026/"
+},
+{
+"id": "p36",
+"state": "LA",
+"name": "Jeff Landry (R)",
+"role": "Governor",
+"note": "Signed tougher penalties near schools (HB 568)",
+"url": "https://norml.org/news/2026/06/04/louisiana-governor-signs-bill-into-law-significantly-increasing-marijuana-penalties/"
+},
+{
+"id": "p37",
+"state": "LA",
+"name": "Sen. Katrina Jackson-Andrews",
+"role": "State Senator",
+"note": "Sponsor of SB 270 (hospital access for terminal patients)",
+"url": "https://legis.la.gov/legis/BillInfo.aspx?i=250640"
+},
+{
+"id": "p38",
+"state": "MD",
+"name": "Wes Moore (D)",
+"role": "Governor",
+"note": "Led 16-governor letter urging SAFE Banking",
+"url": "https://www.cannabisbusinesstimes.com/safe-banking-act/news/16425050/16-governors-urge-congress-to-pass-safe-banking-act-for-cannabis-industry"
+},
+{
+"id": "p39",
+"state": "MO",
+"name": "Catherine Hanaway (R)",
+"role": "Attorney General",
+"note": "Suing retailers over illegal products sold as hemp",
+"url": "https://www.marijuanamoment.net/dea-files-final-brief-in-cannabis-rescheduling-hearing-newsletter-november-9-2026/"
+},
+{
+"id": "p40",
+"state": "NC",
+"name": "Robert Reives (D)",
+"role": "Incoming House Speaker",
+"note": "Says decriminalization is 'on top of everybody's minds'",
+"url": "https://www.marijuanamoment.net/governors-press-congress-for-cannabis-banking-bill-newsletter-november-11-2026/"
+},
+{
+"id": "p41",
+"state": "NC",
+"name": "Pat Oglesby",
+"role": "Advisory Council on Cannabis member",
+"note": "Argues for potency-based cannabis taxes",
+"url": "https://www.marijuanamoment.net/governors-press-congress-for-cannabis-banking-bill-newsletter-november-11-2026/"
+},
+{
+"id": "p42",
+"state": "NE",
+"name": "Mike Hilgers (R)",
+"role": "Attorney General",
+"note": "Reviewing the latest rule amendments",
+"url": "https://www.marijuanamoment.net/schumer-vs-van-hollen-on-cannabis-newsletter-november-17-2026/"
+},
+{
+"id": "p43",
+"state": "NE",
+"name": "Lorelle Mueting",
+"role": "Medical Cannabis Commission interim chair",
+"note": "",
+"url": "https://www.newsfromthestates.com/node/438551"
+},
+{
+"id": "p44",
+"state": "NH",
+"name": "Kelly Ayotte (R)",
+"role": "Governor",
+"note": "Opposes legalization; vetoes likely",
+"url": "https://www.nhpr.org/politics/2026-11-13/marijuana-cannabis-legalization-legislation-democrats-newhampshire"
+},
+{
+"id": "p45",
+"state": "NH",
+"name": "Rep. Jared Sullivan (D)",
+"role": "State Representative",
+"note": "Will sponsor 2027 legalization bill",
+"url": "https://www.nhpr.org/politics/2026-11-13/marijuana-cannabis-legalization-legislation-democrats-newhampshire"
+},
+{
+"id": "p46",
+"state": "NJ",
+"name": "Mikie Sherrill (D)",
+"role": "Governor",
+"note": "Signed hemp law aligning state with federal policy",
+"url": "https://www.marijuanamoment.net/partial-federal-hemp-product-ban-takes-effect-newsletter-november-13-2026/"
+},
+{
+"id": "p47",
+"state": "NV",
+"name": "Ondra L. Berry",
+"role": "Cannabis Compliance Board Chair",
+"note": "",
+"url": "https://ccb.nv.gov/news/"
+},
+{
+"id": "p48",
+"state": "NV",
+"name": "Michael Miles",
+"role": "CCB Acting Executive Director",
+"note": "",
+"url": "https://ccb.nv.gov/?p=5355"
+},
+{
+"id": "p49",
+"state": "OH",
+"name": "Sen. Steve Huffman (R)",
+"role": "State Senator",
+"note": "Sponsor of SB 56 rewrite",
+"url": "https://www.ohiosenate.gov/news/on-the-record/update-governor-signs-senate-bill-56-reforming-ohios-marijuana-and-intoxicating-hemp-laws"
+},
+{
+"id": "p50",
+"state": "OK",
+"name": "Kevin Stitt (R)",
+"role": "Outgoing governor",
+"note": "Called for a vote to 'shut down' medical marijuana",
+"url": "https://www.kgou.org/politics-and-government/2026-02-04/gov-stitt-calls-for-state-question-to-shut-down-oklahoma-medical-marijuana"
+},
+{
+"id": "p51",
+"state": "OK",
+"name": "Lonnie Paxton (R)",
+"role": "Senate President Pro Tem",
+"note": "Sees no legislative support for a repeal question",
+"url": "https://www.marijuanamoment.net/oklahoma-house-and-senate-gop-leaders-dismiss-governors-push-to-repeal-medical-marijuana-at-the-ballot/"
+},
+{
+"id": "p52",
+"state": "PA",
+"name": "Josh Shapiro (D)",
+"role": "Governor",
+"note": "Has put legalization in budget proposals",
+"url": "https://norml.org/blog/2026/11/09/pennsylvania-senate-flip-provides-pathway-for-adult-use-legalization/"
+},
+{
+"id": "p53",
+"state": "PA",
+"name": "Jay Costa (D)",
+"role": "Presumptive Senate President Pro Tem",
+"note": "Says legalization isn't a top 2027 priority",
+"url": "https://www.cannabisbusinesstimes.com/us-states/pennsylvania/news/16541595/pennsylvania-2027-adultuse-legalization-will-take-back-seat-to-more-important-issues"
+},
+{
+"id": "p54",
+"state": "PA",
+"name": "Joanna McClinton (D)",
+"role": "House Speaker",
+"note": "Said legalization has a path with a Dem Senate",
+"url": "https://norml.org/blog/2026/11/09/pennsylvania-senate-flip-provides-pathway-for-adult-use-legalization/"
+},
+{
+"id": "p55",
+"state": "SC",
+"name": "Sen. Tom Davis (R)",
+"role": "State Senator",
+"note": "Long-time sponsor of the Compassionate Care Act",
+"url": "https://www.scstatehouse.gov/sess126_2025-2026/bills/53.htm"
+},
+{
+"id": "p56",
+"state": "TX",
+"name": "Gina Hinojosa (D)",
+"role": "Governor-elect",
+"note": "Backs taxing/regulating hemp; let voters decide on THC",
+"url": "https://harris-sliwoski.com/?p=145220"
+},
+{
+"id": "p57",
+"state": "TX",
+"name": "Vikki Goodwin (D)",
+"role": "Lt. Governor-elect",
+"note": "Cannabis regulation bill a top 2027 priority",
+"url": "https://www.marijuanamoment.net/partial-federal-hemp-product-ban-takes-effect-newsletter-november-13-2026/"
+},
+{
+"id": "p58",
+"state": "TX",
+"name": "Nathan Johnson (D)",
+"role": "Attorney General-elect",
+"note": "Sponsored hemp-regulation and decriminalization bills",
+"url": "https://harris-sliwoski.com/?p=145220"
+},
+{
+"id": "p59",
+"state": "TX",
+"name": "Clayton Tucker (D)",
+"role": "Agriculture Commissioner-elect",
+"note": "Calls hemp a 'saving grace' for farmers",
+"url": "https://www.marijuanamoment.net/partial-federal-hemp-product-ban-takes-effect-newsletter-november-13-2026/"
+},
+{
+"id": "p60",
+"state": "VA",
+"name": "Abigail Spanberger (D)",
+"role": "Governor",
+"note": "Signed retail framework (HB 30) in June 2026",
+"url": "https://www.axios.com/local/washington-dc/2026/07/07/virginia-legal-weed-marijuana-dmv"
+},
+{
+"id": "p61",
+"state": "VA",
+"name": "Sen. Louise Lucas (D)",
+"role": "Senate President Pro Tem",
+"note": "Pleaded not guilty to federal corruption and marijuana charges",
+"url": "https://www.marijuanamoment.net/schumer-vs-van-hollen-on-cannabis-newsletter-november-17-2026/"
+},
+{
+"id": "p62",
+"state": "WI",
+"name": "David Crowley (D)",
+"role": "Governor-elect",
+"note": "Sees legalization revenue offsetting Medicaid cuts",
+"url": "https://www.marijuanamoment.net/partial-federal-hemp-product-ban-takes-effect-newsletter-november-13-2026/"
+},
+{
+"id": "p63",
+"state": "WV",
+"name": "Kent Leonhardt (R)",
+"role": "Agriculture Commissioner",
+"note": "Urges Congress to regulate, not ban, hemp THC",
+"url": "https://www.marijuanamoment.net/senate-panel-pushes-to-extend-federal-medical-cannabis-protections-newsletter-november-16-2026/"
+},
+{
+"id": "p64",
+"state": "MA",
+"name": "Cannabis Control Commission",
+"role": "State regulator",
+"note": "Advancing testing-rule changes",
+"url": "https://www.marijuanamoment.net/partial-federal-hemp-product-ban-takes-effect-newsletter-november-13-2026/"
+},
+{
+"id": "p65",
+"state": "UT",
+"name": "Rep. Jennifer Dailey-Provost (D)",
+"role": "State Representative",
+"note": "Sponsor of HB 389 (program moves to UDAF)",
+"url": "https://le.utah.gov/Session/2026/bills/introduced/HB0389.pdf"
+},
+{
+"id": "p66",
+"state": "AK",
+"name": "Jonathan Kreiss-Tomkins (D), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p67",
+"state": "AK",
+"name": "Lisa Murkowski (R)",
+"role": "U.S. Senator",
+"note": "Cosponsor, SAFE Banking Act of 2026",
+"url": "https://www.merkley.senate.gov/merkley-bipartisan-senators-reintroduce-cannabis-banking-reform/"
+},
+{
+"id": "p68",
+"state": "AK",
+"name": "Mary Peltola (D)",
+"role": "U.S. Senator-elect",
+"note": "Defeated Sen. Dan Sullivan",
+"url": ""
+},
+{
+"id": "p69",
+"state": "AL",
+"name": "Tommy Tuberville (R), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p70",
+"state": "AL",
+"name": "Katie Britt (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p71",
+"state": "AL",
+"name": "Barry Moore (R)",
+"role": "U.S. Senator-elect",
+"note": "",
+"url": ""
+},
+{
+"id": "p72",
+"state": "AR",
+"name": "Sarah Huckabee Sanders (R), re-elected",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p73",
+"state": "AR",
+"name": "John Boozman (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p74",
+"state": "AR",
+"name": "Tom Cotton (R)",
+"role": "U.S. Senator",
+"note": "Re-elected 2026",
+"url": ""
+},
+{
+"id": "p75",
+"state": "AZ",
+"name": "Katie Hobbs (D), re-elected",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p76",
+"state": "AZ",
+"name": "Mark Kelly (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p77",
+"state": "AZ",
+"name": "Ruben Gallego (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p78",
+"state": "CA",
+"name": "Xavier Becerra (D), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p79",
+"state": "CA",
+"name": "Alex Padilla (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p80",
+"state": "CA",
+"name": "Adam Schiff (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p81",
+"state": "CO",
+"name": "Phil Weiser (D), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p82",
+"state": "CO",
+"name": "Michael Bennet (D)",
+"role": "U.S. Senator",
+"note": "CAOA cosponsor",
+"url": ""
+},
+{
+"id": "p83",
+"state": "CO",
+"name": "John Hickenlooper (D)",
+"role": "U.S. Senator",
+"note": "Re-elected 2026; CAOA cosponsor",
+"url": ""
+},
+{
+"id": "p84",
+"state": "CT",
+"name": "Ned Lamont (D), re-elected",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p85",
+"state": "CT",
+"name": "Richard Blumenthal (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p86",
+"state": "CT",
+"name": "Chris Murphy (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p87",
+"state": "DE",
+"name": "Matt Meyer (D)",
+"role": "Governor",
+"note": "",
+"url": ""
+},
+{
+"id": "p88",
+"state": "DE",
+"name": "Chris Coons (D)",
+"role": "U.S. Senator",
+"note": "Re-elected 2026",
+"url": ""
+},
+{
+"id": "p89",
+"state": "DE",
+"name": "Lisa Blunt Rochester (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p91",
+"state": "FL",
+"name": "Rick Scott (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p92",
+"state": "FL",
+"name": "Ashley Moody (R)",
+"role": "U.S. Senator",
+"note": "Won 2026 special election",
+"url": ""
+},
+{
+"id": "p93",
+"state": "GA",
+"name": "Keisha Lance Bottoms (D), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p94",
+"state": "GA",
+"name": "Jon Ossoff (D)",
+"role": "U.S. Senator",
+"note": "Re-elected 2026",
+"url": ""
+},
+{
+"id": "p95",
+"state": "GA",
+"name": "Raphael Warnock (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p96",
+"state": "HI",
+"name": "Josh Green (D), re-elected",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p97",
+"state": "HI",
+"name": "Brian Schatz (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p98",
+"state": "HI",
+"name": "Mazie Hirono (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p100",
+"state": "IA",
+"name": "Chuck Grassley (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p101",
+"state": "IA",
+"name": "Josh Turek (D)",
+"role": "U.S. Senator-elect",
+"note": "Flipped seat (Ernst retired)",
+"url": ""
+},
+{
+"id": "p102",
+"state": "ID",
+"name": "Brad Little (R), re-elected",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p103",
+"state": "ID",
+"name": "Mike Crapo (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p104",
+"state": "ID",
+"name": "Jim Risch (R)",
+"role": "U.S. Senator",
+"note": "Re-elected 2026",
+"url": ""
+},
+{
+"id": "p106",
+"state": "IL",
+"name": "Tammy Duckworth (D)",
+"role": "U.S. Senator",
+"note": "Wants federal hemp-THC ban to take effect without delay",
+"url": "https://www.marijuanamoment.net/bipartisan-cooperation-could-boost-federal-cannabis-reform-newsletter-november-6-2026/"
+},
+{
+"id": "p107",
+"state": "IL",
+"name": "Juliana Stratton (D)",
+"role": "U.S. Senator-elect",
+"note": "Co-signed agenda opposing further hemp delay",
+"url": "https://www.marijuanamoment.net/bipartisan-cooperation-could-boost-federal-cannabis-reform-newsletter-november-6-2026/"
+},
+{
+"id": "p109",
+"state": "IN",
+"name": "Todd Young (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p110",
+"state": "IN",
+"name": "Jim Banks (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p112",
+"state": "KS",
+"name": "Jerry Moran (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p113",
+"state": "KS",
+"name": "Adam Hamilton (D)",
+"role": "U.S. Senator-elect",
+"note": "Defeated Sen. Roger Marshall",
+"url": ""
+},
+{
+"id": "p115",
+"state": "KY",
+"name": "Rand Paul (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p116",
+"state": "KY",
+"name": "Andy Barr (R)",
+"role": "U.S. Senator-elect",
+"note": "House sponsor of a federal hemp regulatory framework",
+"url": "https://www.akerman.com/en/perspectives/congress-approves-one-month-delay-of-federal-hemp-thc-restrictions.html"
+},
+{
+"id": "p118",
+"state": "LA",
+"name": "John Kennedy (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p119",
+"state": "LA",
+"name": "Julia Letlow (R)",
+"role": "U.S. Senator-elect",
+"note": "",
+"url": ""
+},
+{
+"id": "p120",
+"state": "MA",
+"name": "Maura Healey (D), re-elected",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p121",
+"state": "MA",
+"name": "Elizabeth Warren (D)",
+"role": "U.S. Senator",
+"note": "Cosponsor, SAFE Banking Act of 2026",
+"url": "https://www.merkley.senate.gov/merkley-bipartisan-senators-reintroduce-cannabis-banking-reform/"
+},
+{
+"id": "p122",
+"state": "MA",
+"name": "Ed Markey (D)",
+"role": "U.S. Senator",
+"note": "Re-elected 2026",
+"url": ""
+},
+{
+"id": "p124",
+"state": "MD",
+"name": "Chris Van Hollen (D)",
+"role": "U.S. Senator",
+"note": "Running for majority leader; supports legalization",
+"url": "https://www.marijuanamoment.net/schumer-vs-van-hollen-on-cannabis-newsletter-november-17-2026/"
+},
+{
+"id": "p125",
+"state": "MD",
+"name": "Angela Alsobrooks (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p126",
+"state": "ME",
+"name": "Hannah Pingree (D), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p127",
+"state": "ME",
+"name": "Angus King (I)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p128",
+"state": "ME",
+"name": "Troy Jackson (D)",
+"role": "U.S. Senator-elect",
+"note": "Reform supporter; defeated Sen. Susan Collins",
+"url": "https://www.afslaw.com/perspectives/alerts/holding-the-line-voters-protect-legal-cannabis-the-2026-midterms-the-next-fight"
+},
+{
+"id": "p129",
+"state": "MI",
+"name": "Jocelyn Benson (D), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p130",
+"state": "MI",
+"name": "Elissa Slotkin (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p131",
+"state": "MI",
+"name": "Abdul El-Sayed (D)",
+"role": "U.S. Senator-elect",
+"note": "",
+"url": ""
+},
+{
+"id": "p133",
+"state": "MN",
+"name": "Amy Klobuchar (D)",
+"role": "U.S. Senator / governor-elect",
+"note": "Seeking a bipartisan fix to the hemp-THC ban",
+"url": "https://www.marijuanamoment.net/schumer-vs-van-hollen-on-cannabis-newsletter-november-17-2026/"
+},
+{
+"id": "p134",
+"state": "MN",
+"name": "Peggy Flanagan (D)",
+"role": "U.S. Senator-elect",
+"note": "",
+"url": ""
+},
+{
+"id": "p135",
+"state": "MO",
+"name": "Mike Kehoe (R)",
+"role": "Governor",
+"note": "",
+"url": ""
+},
+{
+"id": "p136",
+"state": "MO",
+"name": "Josh Hawley (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p137",
+"state": "MO",
+"name": "Eric Schmitt (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p138",
+"state": "MS",
+"name": "Tate Reeves (R)",
+"role": "Governor",
+"note": "",
+"url": ""
+},
+{
+"id": "p139",
+"state": "MS",
+"name": "Roger Wicker (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p140",
+"state": "MS",
+"name": "Scott Colom (D)",
+"role": "U.S. Senator-elect",
+"note": "Defeated Sen. Cindy Hyde-Smith",
+"url": ""
+},
+{
+"id": "p141",
+"state": "MT",
+"name": "Greg Gianforte (R)",
+"role": "Governor",
+"note": "",
+"url": ""
+},
+{
+"id": "p142",
+"state": "MT",
+"name": "Tim Sheehy (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p143",
+"state": "MT",
+"name": "Kurt Alme (R)",
+"role": "U.S. Senator-elect",
+"note": "Succeeds Steve Daines, a SAFE Banking cosponsor",
+"url": ""
+},
+{
+"id": "p144",
+"state": "NC",
+"name": "Josh Stein (D)",
+"role": "Governor",
+"note": "",
+"url": ""
+},
+{
+"id": "p145",
+"state": "NC",
+"name": "Ted Budd (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p146",
+"state": "NC",
+"name": "Roy Cooper (D)",
+"role": "U.S. Senator-elect",
+"note": "Flipped seat (Tillis retired)",
+"url": ""
+},
+{
+"id": "p147",
+"state": "ND",
+"name": "Kelly Armstrong (R)",
+"role": "Governor",
+"note": "",
+"url": ""
+},
+{
+"id": "p148",
+"state": "ND",
+"name": "John Hoeven (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p149",
+"state": "ND",
+"name": "Kevin Cramer (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p150",
+"state": "NE",
+"name": "Jim Pillen (R), re-elected",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p151",
+"state": "NE",
+"name": "Deb Fischer (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p152",
+"state": "NE",
+"name": "Pete Ricketts (R)",
+"role": "U.S. Senator",
+"note": "Urges no further delay of hemp-THC recriminalization",
+"url": "https://www.marijuanamoment.net/partial-federal-hemp-product-ban-takes-effect-newsletter-november-13-2026/"
+},
+{
+"id": "p154",
+"state": "NH",
+"name": "Maggie Hassan (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p155",
+"state": "NH",
+"name": "Chris Pappas (D)",
+"role": "U.S. Senator-elect",
+"note": "",
+"url": ""
+},
+{
+"id": "p157",
+"state": "NJ",
+"name": "Cory Booker (D)",
+"role": "U.S. Senator",
+"note": "CAOA lead sponsor; re-elected 2026",
+"url": "https://norml.org/blog/2026/07/16/senate-democrats-reintroduce-comprehensive-cannabis-descheduling-and-regulation-legislation/"
+},
+{
+"id": "p158",
+"state": "NJ",
+"name": "Andy Kim (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p159",
+"state": "NM",
+"name": "Deb Haaland (D), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p160",
+"state": "NM",
+"name": "Martin Heinrich (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p161",
+"state": "NM",
+"name": "Ben Ray Luján (D)",
+"role": "U.S. Senator",
+"note": "Re-elected 2026",
+"url": ""
+},
+{
+"id": "p162",
+"state": "NV",
+"name": "Aaron Ford (D), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p163",
+"state": "NV",
+"name": "Catherine Cortez Masto (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p164",
+"state": "NV",
+"name": "Jacky Rosen (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p165",
+"state": "NY",
+"name": "Kathy Hochul (D), re-elected",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p166",
+"state": "NY",
+"name": "Chuck Schumer (D)",
+"role": "U.S. Senator",
+"note": "CAOA lead; running to be majority leader",
+"url": "https://www.marijuanamoment.net/schumer-vs-van-hollen-on-cannabis-newsletter-november-17-2026/"
+},
+{
+"id": "p167",
+"state": "NY",
+"name": "Kirsten Gillibrand (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p168",
+"state": "OH",
+"name": "Amy Acton (D), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p169",
+"state": "OH",
+"name": "Bernie Moreno (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p170",
+"state": "OH",
+"name": "Sherrod Brown (D)",
+"role": "U.S. Senator-elect",
+"note": "Defeated Sen. Jon Husted",
+"url": ""
+},
+{
+"id": "p171",
+"state": "OK",
+"name": "Mike Mazzei (R), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p172",
+"state": "OK",
+"name": "James Lankford (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p173",
+"state": "OK",
+"name": "Kevin Hern (R)",
+"role": "U.S. Senator-elect",
+"note": "",
+"url": ""
+},
+{
+"id": "p174",
+"state": "OR",
+"name": "Tina Kotek (D), re-elected",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p175",
+"state": "OR",
+"name": "Ron Wyden (D)",
+"role": "U.S. Senator",
+"note": "CAOA lead sponsor",
+"url": "https://norml.org/blog/2026/07/16/senate-democrats-reintroduce-comprehensive-cannabis-descheduling-and-regulation-legislation/"
+},
+{
+"id": "p176",
+"state": "OR",
+"name": "Jeff Merkley (D)",
+"role": "U.S. Senator",
+"note": "SAFE Banking Act of 2026 lead; re-elected",
+"url": "https://www.merkley.senate.gov/merkley-bipartisan-senators-reintroduce-cannabis-banking-reform/"
+},
+{
+"id": "p178",
+"state": "PA",
+"name": "John Fetterman (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p179",
+"state": "PA",
+"name": "Dave McCormick (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p180",
+"state": "RI",
+"name": "Helena Foulkes (D), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p181",
+"state": "RI",
+"name": "Jack Reed (D)",
+"role": "U.S. Senator",
+"note": "Re-elected 2026",
+"url": ""
+},
+{
+"id": "p182",
+"state": "RI",
+"name": "Sheldon Whitehouse (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p183",
+"state": "SC",
+"name": "Alan Wilson (R), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p184",
+"state": "SC",
+"name": "Tim Scott (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p185",
+"state": "SC",
+"name": "Annie Andrews (D)",
+"role": "U.S. Senator-elect",
+"note": "Defeated appointed Sen. Darline Graham",
+"url": ""
+},
+{
+"id": "p186",
+"state": "SD",
+"name": "Larry Rhoden (R)",
+"role": "Governor",
+"note": "",
+"url": ""
+},
+{
+"id": "p187",
+"state": "SD",
+"name": "John Thune (R)",
+"role": "U.S. Senator",
+"note": "GOP conference leader; long record opposing reform",
+"url": "https://www.marijuanamoment.net/dea-rejects-cannabis-business-registrations-in-multiple-states-newsletter-november-12-2026/"
+},
+{
+"id": "p188",
+"state": "SD",
+"name": "Mike Rounds (R)",
+"role": "U.S. Senator",
+"note": "Re-elected 2026",
+"url": ""
+},
+{
+"id": "p190",
+"state": "TN",
+"name": "Bill Hagerty (R)",
+"role": "U.S. Senator",
+"note": "Re-elected 2026",
+"url": ""
+},
+{
+"id": "p191",
+"state": "TN",
+"name": "Marsha Blackburn (R)",
+"role": "U.S. Senator / governor-elect",
+"note": "Seat to be filled when she becomes governor",
+"url": ""
+},
+{
+"id": "p193",
+"state": "TX",
+"name": "Ted Cruz (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p194",
+"state": "TX",
+"name": "James Talarico (D)",
+"role": "U.S. Senator-elect",
+"note": "Plans to work with Trump on federal legalization",
+"url": "https://www.marijuanamoment.net/federal-cannabis-reform-gets-democratic-boost-newsletter-november-5-2026/"
+},
+{
+"id": "p195",
+"state": "UT",
+"name": "Spencer Cox (R)",
+"role": "Governor",
+"note": "",
+"url": ""
+},
+{
+"id": "p196",
+"state": "UT",
+"name": "Mike Lee (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p197",
+"state": "UT",
+"name": "John Curtis (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p199",
+"state": "VA",
+"name": "Mark Warner (D)",
+"role": "U.S. Senator",
+"note": "Re-elected 2026",
+"url": ""
+},
+{
+"id": "p200",
+"state": "VA",
+"name": "Tim Kaine (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p201",
+"state": "VT",
+"name": "Phil Scott (R), re-elected",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p202",
+"state": "VT",
+"name": "Bernie Sanders (I)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p203",
+"state": "VT",
+"name": "Peter Welch (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p204",
+"state": "WA",
+"name": "Bob Ferguson (D)",
+"role": "Governor",
+"note": "",
+"url": ""
+},
+{
+"id": "p205",
+"state": "WA",
+"name": "Patty Murray (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p206",
+"state": "WA",
+"name": "Maria Cantwell (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p208",
+"state": "WI",
+"name": "Tammy Baldwin (D)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p209",
+"state": "WI",
+"name": "Ron Johnson (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p210",
+"state": "WV",
+"name": "Patrick Morrisey (R)",
+"role": "Governor",
+"note": "",
+"url": ""
+},
+{
+"id": "p211",
+"state": "WV",
+"name": "Shelley Moore Capito (R)",
+"role": "U.S. Senator",
+"note": "Re-elected 2026",
+"url": ""
+},
+{
+"id": "p212",
+"state": "WV",
+"name": "Jim Justice (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p213",
+"state": "WY",
+"name": "Eric Barlow (R), governor-elect",
+"role": "Governor",
+"note": "",
+"url": "https://californiatoday.com/guides/elections/2026-midterm-election-results-master-guide/"
+},
+{
+"id": "p214",
+"state": "WY",
+"name": "John Barrasso (R)",
+"role": "U.S. Senator",
+"note": "",
+"url": ""
+},
+{
+"id": "p215",
+"state": "WY",
+"name": "Harriet Hageman (R)",
+"role": "U.S. Senator-elect",
+"note": "",
+"url": ""
+},
+{
+"id": "p216",
+"state": "NY",
+"name": "Hakeem Jeffries (D)",
+"role": "Incoming U.S. House Speaker",
+"note": "Previously teamed with Schumer on a legalization bill",
+"url": "https://www.marijuanamoment.net/federal-cannabis-reform-gets-democratic-boost-newsletter-november-5-2026/"
+},
+{
+"id": "p217",
+"state": "OH",
+"name": "Jim Jordan (R)",
+"role": "U.S. Representative; House GOP conference leader",
+"note": "Long record opposing reform",
+"url": "https://www.marijuanamoment.net/dea-rejects-cannabis-business-registrations-in-multiple-states-newsletter-november-12-2026/"
+},
+{
+"id": "p218",
+"state": "OH",
+"name": "David Joyce (R)",
+"role": "U.S. Representative",
+"note": "Lead House sponsor, SAFE Banking Act of 2026",
+"url": "https://www.merkley.senate.gov/merkley-bipartisan-senators-reintroduce-cannabis-banking-reform/"
+},
+{
+"id": "p219",
+"state": "MD",
+"name": "Andy Harris (R)",
+"role": "U.S. Representative",
+"note": "Pushing Congress to close the hemp 'loophole'",
+"url": "https://www.marijuanamoment.net/senate-panel-pushes-to-extend-federal-medical-cannabis-protections-newsletter-november-16-2026/"
+},
+{
+"id": "p220",
+"state": "MN",
+"name": "Angie Craig (D)",
+"role": "U.S. Representative",
+"note": "Co-sponsor of the Lawful Hemp Protection Act",
+"url": "https://www.akerman.com/en/perspectives/congress-approves-one-month-delay-of-federal-hemp-thc-restrictions.html"
+},
+{
+"id": "p221",
+"state": "NV",
+"name": "Dina Titus (D)",
+"role": "U.S. Representative; Cannabis Caucus co-chair",
+"note": "Wants decriminalization at minimum, descheduling at maximum",
+"url": "https://www.marijuanamoment.net/bipartisan-cooperation-could-boost-federal-cannabis-reform-newsletter-november-6-2026/"
+},
+{
+"id": "p222",
+"state": "MT",
+"name": "Steve Daines (R)",
+"role": "U.S. Senator (retiring)",
+"note": "Cosponsor, SAFE Banking Act of 2026",
+"url": "https://www.merkley.senate.gov/merkley-bipartisan-senators-reintroduce-cannabis-banking-reform/"
+}
+]

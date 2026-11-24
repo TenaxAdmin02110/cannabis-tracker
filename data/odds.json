@@ -1,0 +1,506 @@
+[
+ {
+  "id": "o1",
+  "state": "US",
+  "move": "DEA finalizes Schedule III for all marijuana (incl. adult-use)",
+  "horizon": "End of 2027",
+  "probability": 55,
+  "rationale": "Hearing done, final briefs filed; administration backs it, but ALJ, legal challenges and treaty issues add delay."
+ },
+ {
+  "id": "o2",
+  "state": "US",
+  "move": "SAFE/SAFER Banking signed into law",
+  "horizon": "End of 2027",
+  "probability": 35,
+  "rationale": "Democratic majorities, bipartisan sponsors and 16 governors push; Schumer historically held out for broader reform."
+ },
+ {
+  "id": "o3",
+  "state": "US",
+  "move": "Congress replaces or further delays the hemp-THC ban before Dec 11",
+  "horizon": "Dec 11, 2026",
+  "probability": 35,
+  "rationale": "Must-pass funding bill is the only likely vehicle. Unchanged on Nov 24: Sens. Budd, Ricketts and Lankford oppose any delay but cannot block a stopgap alone, and the White House request covers only non-intoxicating CBD."
+ },
+ {
+  "id": "o4",
+  "state": "US",
+  "move": "Medical-cannabis protections rider kept in FY2027 spending law",
+  "horizon": "FY2027 enactment",
+  "probability": 90,
+  "rationale": "The Senate Appropriations Committee's posted drafts keep it; it has survived every year since 2014."
+ },
+ {
+  "id": "o5",
+  "state": "US",
+  "move": "Comprehensive federal legalization (CAOA-style) enacted",
+  "horizon": "End of 2028",
+  "probability": 7,
+  "rationale": "Needs 60 Senate votes or rule change, plus presidential signature."
+ },
+ {
+  "id": "o6",
+  "state": "AK",
+  "move": "Major change to adult-use law",
+  "horizon": "End of 2027",
+  "probability": 10,
+  "rationale": "Stable market; no active repeal or overhaul effort found."
+ },
+ {
+  "id": "o7",
+  "state": "AL",
+  "move": "At least 12 medical dispensaries open",
+  "horizon": "End of 2027",
+  "probability": 60,
+  "rationale": "Five open as of early Nov; integrated licenses still in litigation-prone process."
+ },
+ {
+  "id": "o8",
+  "state": "AL",
+  "move": "Adult-use legalization",
+  "horizon": "End of 2028",
+  "probability": 3,
+  "rationale": "No legislative appetite."
+ },
+ {
+  "id": "o9",
+  "state": "AR",
+  "move": "Adult-use legalization",
+  "horizon": "End of 2028",
+  "probability": 8,
+  "rationale": "Previous initiatives failed; Republican trifecta."
+ },
+ {
+  "id": "o10",
+  "state": "AZ",
+  "move": "Repeal measure qualifies for a ballot",
+  "horizon": "2028",
+  "probability": 8,
+  "rationale": "2026 sponsor reversed himself and dropped the effort."
+ },
+ {
+  "id": "o11",
+  "state": "CA",
+  "move": "DEA-registrable medical pathway created by state law",
+  "horizon": "End of 2027",
+  "probability": 30,
+  "rationale": "DEA objects to dispensing without written certification; would need legislative fix."
+ },
+ {
+  "id": "o12",
+  "state": "CO",
+  "move": "Major regulatory rewrite beyond Nov 2026 rules",
+  "horizon": "End of 2027",
+  "probability": 20,
+  "rationale": "New rules just took effect."
+ },
+ {
+  "id": "o13",
+  "state": "CT",
+  "move": "Further cannabis/hemp overhaul in 2027 session",
+  "horizon": "End of 2027",
+  "probability": 35,
+  "rationale": "2026 already overhauled; follow-up fixes common."
+ },
+ {
+  "id": "o14",
+  "state": "DC",
+  "move": "Congress drops rider blocking DC adult-use sales",
+  "horizon": "FY2027 law",
+  "probability": 20,
+  "rationale": "Democratic majorities help, but rider removal has failed before."
+ },
+ {
+  "id": "o15",
+  "state": "DE",
+  "move": "Social-equity licensing reforms enacted",
+  "horizon": "End of 2027",
+  "probability": 45,
+  "rationale": "Regulators flagged predatory investors; legislature active."
+ },
+ {
+  "id": "o16",
+  "state": "FL",
+  "move": "Adult-use initiative qualifies for the 2028 ballot",
+  "horizon": "2028",
+  "probability": 40,
+  "rationale": "2026 effort fell short on signatures; industry funding remains."
+ },
+ {
+  "id": "o17",
+  "state": "FL",
+  "move": "Legislature legalizes adult-use",
+  "horizon": "End of 2028",
+  "probability": 3,
+  "rationale": "Governor-elect and legislature opposed."
+ },
+ {
+  "id": "o18",
+  "state": "GA",
+  "move": "Adult-use legalization",
+  "horizon": "End of 2028",
+  "probability": 6,
+  "rationale": "Medical just expanded; Republican legislature despite Democratic governor-elect."
+ },
+ {
+  "id": "o19",
+  "state": "HI",
+  "move": "Adult-use law or constitutional amendment passes legislature",
+  "horizon": "End of 2027",
+  "probability": 25,
+  "rationale": "Bills stalled again in 2026; governor supportive."
+ },
+ {
+  "id": "o20",
+  "state": "IA",
+  "move": "Adult-use legalization signed",
+  "horizon": "End of 2027",
+  "probability": 12,
+  "rationale": "Governor-elect supports; legislature unlikely to move quickly."
+ },
+ {
+  "id": "o21",
+  "state": "ID",
+  "move": "Medical cannabis initiative qualifies for ballot",
+  "horizon": "2028",
+  "probability": 45,
+  "rationale": "HJR 4 defeat keeps the route open; advocates nearly qualified in 2026."
+ },
+ {
+  "id": "o22",
+  "state": "IL",
+  "move": "State hemp-THC restrictions enforced after litigation",
+  "horizon": "End of 2027",
+  "probability": 55,
+  "rationale": "Federal judge denied a temporary restraining order on Nov 19 (without prejudice); preliminary-injunction request still pending."
+ },
+ {
+  "id": "o23",
+  "state": "IN",
+  "move": "Medical cannabis law enacted",
+  "horizon": "End of 2027",
+  "probability": 20,
+  "rationale": "Governor and Lt. Gov. open; GOP legislature historically resistant."
+ },
+ {
+  "id": "o24",
+  "state": "KS",
+  "move": "Medical cannabis law enacted",
+  "horizon": "End of 2027",
+  "probability": 20,
+  "rationale": "Democratic governor-elect; Republican legislature."
+ },
+ {
+  "id": "o25",
+  "state": "KY",
+  "move": "Medical program expansion bill enacted",
+  "horizon": "End of 2027",
+  "probability": 35,
+  "rationale": "Fast enrollment growth; Republican legislature cautious."
+ },
+ {
+  "id": "o26",
+  "state": "LA",
+  "move": "Adult-use legalization",
+  "horizon": "End of 2028",
+  "probability": 5,
+  "rationale": "2026 session moved toward stiffer penalties."
+ },
+ {
+  "id": "o27",
+  "state": "MA",
+  "move": "Veterans medical-access bill becomes law",
+  "horizon": "End of 2026",
+  "probability": 50,
+  "rationale": "Senate passed amended House bill in informal session."
+ },
+ {
+  "id": "o28",
+  "state": "MD",
+  "move": "Process for out-of-state first responders' medical-use protections finalized",
+  "horizon": "End of 2027",
+  "probability": 75,
+  "rationale": "MCA already building the process under the new law."
+ },
+ {
+  "id": "o29",
+  "state": "ME",
+  "move": "Repeal measure qualifies",
+  "horizon": "2028",
+  "probability": 10,
+  "rationale": "2026 effort failed to gather signatures."
+ },
+ {
+  "id": "o30",
+  "state": "MI",
+  "move": "Wholesale tax repealed or cut",
+  "horizon": "End of 2027",
+  "probability": 20,
+  "rationale": "Tax just took effect; industry lobbying."
+ },
+ {
+  "id": "o31",
+  "state": "MN",
+  "move": "Federal hemp fix led by Klobuchar becomes law",
+  "horizon": "End of 2027",
+  "probability": 30,
+  "rationale": "She leaves the Senate to become governor in January."
+ },
+ {
+  "id": "o32",
+  "state": "MO",
+  "move": "State hemp-THC restrictions survive legal challenge",
+  "horizon": "End of 2027",
+  "probability": 70,
+  "rationale": "A federal judge already dismissed one suit."
+ },
+ {
+  "id": "o33",
+  "state": "MS",
+  "move": "Major program change",
+  "horizon": "End of 2027",
+  "probability": 15,
+  "rationale": "Stable program; Republican trifecta."
+ },
+ {
+  "id": "o34",
+  "state": "MT",
+  "move": "Major change to adult-use law",
+  "horizon": "End of 2027",
+  "probability": 15,
+  "rationale": "No active effort found."
+ },
+ {
+  "id": "o35",
+  "state": "NC",
+  "move": "Medical cannabis law enacted",
+  "horizon": "End of 2027",
+  "probability": 25,
+  "rationale": "Dem House leadership supportive; Senate is the hurdle."
+ },
+ {
+  "id": "o36",
+  "state": "NC",
+  "move": "Marijuana decriminalization enacted",
+  "horizon": "End of 2027",
+  "probability": 20,
+  "rationale": "Incoming Speaker says it's top of mind."
+ },
+ {
+  "id": "o37",
+  "state": "ND",
+  "move": "Adult-use legalization",
+  "horizon": "End of 2028",
+  "probability": 8,
+  "rationale": "Voters said no three times."
+ },
+ {
+  "id": "o38",
+  "state": "NE",
+  "move": "First medical cannabis sales to patients",
+  "horizon": "End of 2027",
+  "probability": 45,
+  "rationale": "Licensed cultivators exist, but no testing timeline and AG review pending."
+ },
+ {
+  "id": "o39",
+  "state": "NH",
+  "move": "Legislature passes adult-use legalization",
+  "horizon": "End of 2027",
+  "probability": 60,
+  "rationale": "Democrats control both chambers; House supermajority."
+ },
+ {
+  "id": "o40",
+  "state": "NH",
+  "move": "Legalization becomes law (signed or veto overridden)",
+  "horizon": "End of 2027",
+  "probability": 20,
+  "rationale": "Ayotte opposes; Senate override needs Republican votes."
+ },
+ {
+  "id": "o41",
+  "state": "NJ",
+  "move": "Off-duty use restrictions for police/first responders enacted",
+  "horizon": "End of 2027",
+  "probability": 25,
+  "rationale": "Former lawmaker cites significant legal hurdles."
+ },
+ {
+  "id": "o42",
+  "state": "NM",
+  "move": "Major change to adult-use law",
+  "horizon": "End of 2027",
+  "probability": 15,
+  "rationale": "Stable market."
+ },
+ {
+  "id": "o43",
+  "state": "NV",
+  "move": "Major regulatory change under Gov. Ford",
+  "horizon": "End of 2027",
+  "probability": 30,
+  "rationale": "New Democratic governor with cannabis-commission experience."
+ },
+ {
+  "id": "o44",
+  "state": "NY",
+  "move": "Major change to adult-use law",
+  "horizon": "End of 2027",
+  "probability": 30,
+  "rationale": "Ongoing illicit-market enforcement legislation."
+ },
+ {
+  "id": "o45",
+  "state": "OH",
+  "move": "Legislature restores provisions of voter-approved Issue 2",
+  "horizon": "End of 2028",
+  "probability": 10,
+  "rationale": "SB 56 supporters still control the legislature; new governor can't act alone."
+ },
+ {
+  "id": "o46",
+  "state": "OK",
+  "move": "Adult-use initiative qualifies for 2028 ballot",
+  "horizon": "2028",
+  "probability": 30,
+  "rationale": "Court struck down petition limits; prior effort withdrawn."
+ },
+ {
+  "id": "o47",
+  "state": "OK",
+  "move": "Medical-repeal question placed on ballot",
+  "horizon": "End of 2028",
+  "probability": 8,
+  "rationale": "Legislative leaders rejected Stitt's call; Stitt leaves office."
+ },
+ {
+  "id": "o48",
+  "state": "OR",
+  "move": "Major change to adult-use law",
+  "horizon": "End of 2027",
+  "probability": 15,
+  "rationale": "Stable market."
+ },
+ {
+  "id": "o49",
+  "state": "PA",
+  "move": "Adult-use legalization signed",
+  "horizon": "End of 2027",
+  "probability": 55,
+  "rationale": "Democratic trifecta and governor support; Senate leader calls it lower priority."
+ },
+ {
+  "id": "o50",
+  "state": "RI",
+  "move": "Proposed operating-rule changes adopted",
+  "horizon": "End of 2027",
+  "probability": 70,
+  "rationale": "Changes already filed."
+ },
+ {
+  "id": "o51",
+  "state": "SC",
+  "move": "Medical cannabis law enacted",
+  "horizon": "End of 2027",
+  "probability": 15,
+  "rationale": "Died again in 2026; House leadership opposed."
+ },
+ {
+  "id": "o52",
+  "state": "SD",
+  "move": "Legislature repeals or guts medical program",
+  "horizon": "End of 2027",
+  "probability": 10,
+  "rationale": "Lawmakers rejected repeal bills in 2026."
+ },
+ {
+  "id": "o53",
+  "state": "TN",
+  "move": "Medical cannabis law enacted",
+  "horizon": "End of 2027",
+  "probability": 5,
+  "rationale": "Commission is advisory; legislature opposed."
+ },
+ {
+  "id": "o54",
+  "state": "TX",
+  "move": "Hemp-THC regulatory framework (not a ban) enacted",
+  "horizon": "End of 2027",
+  "probability": 60,
+  "rationale": "Governor, Lt. Gov. and AG-elects favor regulation; depends on federal hemp outcome."
+ },
+ {
+  "id": "o55",
+  "state": "TX",
+  "move": "Adult-use legalization enacted",
+  "horizon": "End of 2027",
+  "probability": 8,
+  "rationale": "Supportive executive, but legislature unlikely to pass full legalization in one session."
+ },
+ {
+  "id": "o56",
+  "state": "UT",
+  "move": "Program transition to UDAF completed on time",
+  "horizon": "Jan 1, 2027",
+  "probability": 85,
+  "rationale": "Set in statute; underway."
+ },
+ {
+  "id": "o57",
+  "state": "VA",
+  "move": "Retail sales start on schedule",
+  "horizon": "July 1, 2027",
+  "probability": 70,
+  "rationale": "Law signed; regulations and licensing still to be built."
+ },
+ {
+  "id": "o58",
+  "state": "VT",
+  "move": "Major change to adult-use law",
+  "horizon": "End of 2027",
+  "probability": 15,
+  "rationale": "Stable market."
+ },
+ {
+  "id": "o59",
+  "state": "WA",
+  "move": "Proposed financial-interest/co-op rules adopted",
+  "horizon": "End of 2027",
+  "probability": 70,
+  "rationale": "Rules already filed."
+ },
+ {
+  "id": "o60",
+  "state": "WI",
+  "move": "Medical cannabis law enacted",
+  "horizon": "End of 2027",
+  "probability": 75,
+  "rationale": "Democratic trifecta; GOP senators open to discussion."
+ },
+ {
+  "id": "o61",
+  "state": "WI",
+  "move": "Adult-use legalization signed",
+  "horizon": "End of 2027",
+  "probability": 55,
+  "rationale": "Leaders say they will 'definitely' legalize; details unsettled."
+ },
+ {
+  "id": "o62",
+  "state": "WV",
+  "move": "Adult-use legalization",
+  "horizon": "End of 2028",
+  "probability": 5,
+  "rationale": "Republican trifecta."
+ },
+ {
+  "id": "o63",
+  "state": "WY",
+  "move": "Medical cannabis law enacted",
+  "horizon": "End of 2028",
+  "probability": 5,
+  "rationale": "No momentum found."
+ }
+]

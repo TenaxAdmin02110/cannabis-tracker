@@ -1,0 +1,92 @@
+{
+  "title": "National Cannabis Outlook Tracker",
+  "titleSuffix": "Tenax Strategies",
+  "lang": "en",
+  "published": "2026-11-24T15:31:34Z",
+  "datasets": {
+    "basemap": {
+      "file": "basemap.json",
+      "bytes": 1107393,
+      "rows": 95,
+      "sha256": "b25fbaccb730847f4ef1fb05ca7c1544b35d385fd737e11d3dd96dfee4656dce",
+      "changed": "2026-11-24T15:31:34Z"
+    },
+    "counties": {
+      "file": "counties.json",
+      "bytes": 1060017,
+      "rows": 3144,
+      "sha256": "b385540d10594365529fa92c3dae9764d188203cc60dd50b082089a4930ae49c",
+      "changed": "2026-11-24T15:31:34Z"
+    },
+    "events": {
+      "file": "events.json",
+      "bytes": 12400,
+      "rows": 44,
+      "sha256": "902e6d9c504aa1ff420f0d6b728fc0a02f826bda66f0d7af3546b88192fd4e85",
+      "changed": "2026-11-24T15:31:34Z"
+    },
+    "munigeo": {
+      "file": "munigeo.json",
+      "bytes": 4472233,
+      "rows": 20702,
+      "sha256": "14deede7591c5fa0bc572ec4b2d73d044b4ebe9281ee0c979888bf79106e9d42",
+      "changed": "2026-11-24T15:31:34Z"
+    },
+    "munis": {
+      "file": "munis.json",
+      "bytes": 4369575,
+      "rows": 15322,
+      "sha256": "9500647e51b6c4f04ace6a884fd963e6d767f537911a0b793ac5bd1e1f72f02c",
+      "changed": "2026-11-24T15:31:34Z"
+    },
+    "news": {
+      "file": "news.json",
+      "bytes": 69069,
+      "rows": 134,
+      "sha256": "e64ddff94bd96b74eb22264d55450a700a6b59e8a606ad909dc3496b76508e9d",
+      "changed": "2026-11-24T15:31:34Z"
+    },
+    "odds": {
+      "file": "odds.json",
+      "bytes": 13498,
+      "rows": 63,
+      "sha256": "2e3785a075d315283e98b804623e78b33eab4238b0d2c421c5e2e17a410cb670",
+      "changed": "2026-11-24T15:31:34Z"
+    },
+    "pathways": {
+      "file": "pathways.json",
+      "bytes": 28368,
+      "rows": 90,
+      "sha256": "866fd54dfa6cc91af0e41ac399b18fbc487f6ae42eb123760706dfa29aebbb10",
+      "changed": "2026-11-24T15:31:34Z"
+    },
+    "players": {
+      "file": "players.json",
+      "bytes": 38388,
+      "rows": 206,
+      "sha256": "d26616b0b2b057b183f39ae0d81e3870aad5083b5ed63044d64d32a1d3668d0c",
+      "changed": "2026-11-24T15:31:34Z"
+    },
+    "senate": {
+      "file": "senate.json",
+      "bytes": 11555,
+      "rows": 35,
+      "sha256": "1edbec7b87ec9b24476007bc510827d3e0b277b2fc76e947c521049990254b98",
+      "changed": "2026-11-24T15:31:34Z"
+    },
+    "shapes": {
+      "file": "shapes.json",
+      "bytes": 109329,
+      "rows": 51,
+      "sha256": "e6375976619ffab89df7b6e681c163edfeb1b0386dd41b2595d8665a699894c9",
+      "changed": "2026-11-24T15:31:34Z"
+    },
+    "states": {
+      "file": "states.json",
+      "bytes": 18644,
+      "rows": 51,
+      "sha256": "5610898bd4aff4aa79dcf6141c82d95ae9db9399becbd05221771de67a257b77",
+      "changed": "2026-11-24T15:31:34Z"
+    }
+  }
+}
