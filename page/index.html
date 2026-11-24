@@ -128,6 +128,20 @@
 .ct-btn-main{background:var(--color-fg);color:var(--color-panel);border-color:var(--color-fg);font-weight:800;padding:9px 16px}
 .ct-btn-main:hover{opacity:0.9}
 @media (max-width:560px){.ct-clist li{grid-template-columns:1fr}}
+.ct-cal-head{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.ct-cal-title{font-family:var(--font-anthropic-serif);font-weight:700;font-size:1.4rem;min-width:150px;text-align:center}
+.ct-cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid var(--color-border-line);border-left:1px solid var(--color-border-line)}
+.ct-cal-dow{font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-fg-muted);padding:6px;border-right:1px solid var(--color-border-line);border-bottom:1px solid var(--color-border-line)}
+.ct-cal-day{min-height:78px;padding:4px 6px;border-right:1px solid var(--color-border-line);border-bottom:1px solid var(--color-border-line);font-size:12px;min-width:0}
+.ct-cal-day.ct-out{background:var(--color-bg)}
+.ct-cal-n{font-weight:700}
+.ct-cal-day.ct-past .ct-cal-n{color:var(--color-fg-muted)}
+.ct-cal-day.ct-today{box-shadow:inset 0 0 0 2px var(--ct-accent)}
+.ct-cal-ev{display:block;margin-top:3px;padding-left:5px;border-left:3px solid var(--ct-accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11px;line-height:1.3}
+.ct-cal-day.ct-past .ct-cal-ev{border-left-color:var(--color-border-line);color:var(--color-fg-muted)}
+.ct-cal-sec{margin:18px 0 6px;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-fg-muted)}
+.ct-tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;border:1px solid var(--color-border-line);padding:0 5px;margin-left:6px;color:var(--color-fg-muted)}
+@media (max-width:560px){.ct-cal-day{min-height:44px;padding:3px}.ct-cal-ev{display:inline-block;width:7px;height:7px;padding:0;margin:3px 2px 0 0;border:0;border-radius:50%;background:var(--ct-accent);font-size:0}.ct-cal-day.ct-past .ct-cal-ev{background:var(--color-border-line)}}
 @media print{.ct-nav{display:none}.ct-card{break-inside:avoid}}
 </style>
 
@@ -147,17 +161,23 @@
 
   <section id="federal">
     <div class="ct-help" id="how-to">
-      <b>How to use this tracker.</b> 1. Click any state on the map, or pick one from the menu above, to open its page. 2. States marked with a dot have a dated change in the next 90 days; their page opens on those dates first. 3. Use the News tabs for linked stories with short summaries. 4. "Federal overview &amp; map" brings you back here.
+      <b>How to use this tracker.</b> 1. Click any state on the map, or pick one from the menu above, to open its page. 2. States marked with a dot have a dated change in the next 90 days; their page opens on those dates first. 3. Use the News tabs for linked stories with short summaries, and the Calendar tabs for every meeting and key date, past and upcoming. 4. "Federal overview &amp; map" brings you back here.
     </div>
     <div class="ct-tabs" role="tablist" aria-label="Federal page sections">
       <button type="button" class="ct-tab" role="tab" data-scope="fed" data-tab="overview" aria-selected="true">Overview &amp; map</button>
       <button type="button" class="ct-tab" role="tab" data-scope="fed" data-tab="news" aria-selected="false">Federal news <small class="ct-ncount" data-scope="fed"></small></button>
+      <button type="button" class="ct-tab" role="tab" data-scope="fed" data-tab="cal" aria-selected="false">Calendar</button>
     </div>
     <div class="ct-card" id="fed-news-pane" data-pane="fed-news" hidden>
       <h2>Federal cannabis news</h2>
       <p class="ct-help">News about Congress, the White House, the DEA and other national agencies. <b>Click a bold headline</b> to read the full story on the news site (it opens in a new tab). The short paragraph under each headline tells you what the story is about. Newest stories are at the top. To see news for one state, pick the state from the menu above or click it on the map.</p>
       <input type="search" class="ct-nsearch" data-scope="fed" placeholder="Search federal news (for example: hemp, banking, DEA)" aria-label="Search federal news">
       <ul class="ct-news" data-draw="fed-news-all" data-source="news"></ul>
+    </div>
+    <div class="ct-card" id="fed-cal-pane" data-pane="fed-cal" hidden>
+      <h2>Federal calendar</h2>
+      <p class="ct-help">Federal meetings, deadlines and key dates, past and upcoming. Use the arrows to move between months. Each item below the calendar links to its source.</p>
+      <div data-draw="fed-cal" data-source="events"></div>
     </div>
     <div class="ct-wrap" id="fed-overview" data-pane="fed-overview">
       <div class="ct-kpis" id="kpis">
@@ -247,12 +267,18 @@
       <div class="ct-tabs" role="tablist" aria-label="State page sections" id="st-tabs">
         <button type="button" class="ct-tab" role="tab" data-scope="st" data-tab="overview" aria-selected="true">Overview &amp; map</button>
         <button type="button" class="ct-tab" role="tab" data-scope="st" data-tab="news" aria-selected="false">State news <small class="ct-ncount" data-scope="st"></small></button>
+        <button type="button" class="ct-tab" role="tab" data-scope="st" data-tab="cal" aria-selected="false">Calendar</button>
       </div>
       <div class="ct-card" id="st-news-pane" data-pane="st-news" hidden>
         <h3>Cannabis news: <span data-draw="st-news-name" data-source="states"></span></h3>
         <p class="ct-help">News about cannabis laws and politics in this state. <b>Click a bold headline</b> to read the full story on the news site (it opens in a new tab). The short paragraph under each headline tells you what the story is about. Newest stories are at the top.</p>
         <input type="search" class="ct-nsearch" data-scope="st" placeholder="Search this state's news" aria-label="Search this state's news">
         <ul class="ct-news" data-draw="st-news-all" data-source="news"></ul>
+      </div>
+      <div class="ct-card" id="st-cal-pane" data-pane="st-cal" hidden>
+        <h3>Calendar: <span data-draw="st-cal-name" data-source="states"></span></h3>
+        <p class="ct-help">This state's board meetings, deadlines and other key dates, past and upcoming. Use the arrows to move between months. Each item below the calendar links to its source.</p>
+        <div data-draw="st-cal" data-source="events"></div>
       </div>
 
       <div class="ct-wrap" id="st-overview" data-pane="st-overview">
@@ -313,6 +339,50 @@
     if(/^\d{4}-\d{2}$/.test(s)) return fmtMon(new Date(s + '-01T00:00:00Z'));
     return s;
   };
+  window.ctSourceName = function(u){
+    let host = ''; try { host = new URL(u).hostname.replace(/^www\./, ''); } catch(e) { return 'Link'; }
+    const names = {
+      'abca.dc.gov': 'DC Alcoholic Beverage and Cannabis Administration',
+      'amcc.alabama.gov': 'Alabama Medical Cannabis Commission',
+      'azcarecheck.azdhs.gov': 'Arizona Department of Health Services',
+      'ballotpedia.org': 'Ballotpedia',
+      'cannabis.ca.gov': 'California Department of Cannabis Control',
+      'cannabis.maryland.gov': 'Maryland Cannabis Administration',
+      'ccb.vermont.gov': 'Vermont Cannabis Control Board',
+      'commerce.alaska.gov': 'Alaska Alcohol and Marijuana Control Office',
+      'crop.rld.nm.gov': 'New Mexico Cannabis Control Division',
+      'data.pa.gov': 'Pennsylvania Department of Health (open data)',
+      'dfa.arkansas.gov': 'Arkansas Department of Finance and Administration',
+      'dhhs.nh.gov': 'New Hampshire Department of Health and Human Services',
+      'docs.legis.wisconsin.gov': 'Wisconsin Statutes (Wisconsin Legislature)',
+      'doh.sd.gov': 'South Dakota Department of Health',
+      'dor.ms.gov': 'Mississippi Department of Revenue',
+      'dps.texas.gov': 'Texas Department of Public Safety',
+      'experience.arcgis.com': 'Missouri state map (ArcGIS)',
+      'health.hawaii.gov': 'Hawaii Department of Health',
+      'hhs.nd.gov': 'North Dakota Health and Human Services',
+      'iga.in.gov': 'Indiana Code (Indiana General Assembly)',
+      'ksrevisor.gov': 'Kansas Statutes (Revisor of Statutes)',
+      'law.justia.com': 'Tennessee Code (via Justia)',
+      'lcb.wa.gov': 'Washington State Liquor and Cannabis Board',
+      'ldh.la.gov': 'Louisiana Department of Health',
+      'legis.iowa.gov': 'Iowa Code (Iowa Legislature)',
+      'legislature.idaho.gov': 'Idaho Statutes (Idaho Legislature)',
+      'mcc.nebraska.gov': 'Nebraska Medical Cannabis Commission',
+      'med.colorado.gov': 'Colorado Marijuana Enforcement Division',
+      'medicalcannabis.utah.gov': 'Utah Medical Cannabis Program',
+      'ncleg.gov': 'North Carolina General Statutes (General Assembly)',
+      'omc.delaware.gov': 'Delaware Office of the Marijuana Commissioner',
+      'omc.wv.gov': 'West Virginia Office of Medical Cannabis',
+      'oregon.gov': 'Oregon Liquor and Cannabis Commission',
+      'oscn.net': 'Oklahoma Statutes (Oklahoma State Courts Network)',
+      'public.tableau.com': 'Washington city and county zoning map (Tableau Public)',
+      'revenue.mt.gov': 'Montana Department of Revenue',
+      'scstatehouse.gov': 'South Carolina Code of Laws',
+      'wyoleg.gov': 'Wyoming Statutes (Wyoming Legislature)'
+    };
+    return names[host] || host;
+  };
   window.ctColor = function(status){
     if(status === 'Retail') return dash.colors[0];
     if(status === 'Medical only') return dash.colors[1];
@@ -333,7 +403,7 @@
 
   document.querySelectorAll('.ct-sw[data-status]').forEach((el) => { el.style.background = window.ctColor(el.getAttribute('data-status')); });
 
-  const STATE_DRAWS = ['st-name','st-status','st-outlook','st-note','st-gov','st-reg','st-senate','st-players','st-news','st-events','st-odds','state-pick','map','st-path','st-muni','muni-legend','muni-detail','st-coming','st-news-all','st-news-name'];
+  const STATE_DRAWS = ['st-name','st-status','st-outlook','st-note','st-gov','st-reg','st-senate','st-players','st-news','st-events','st-odds','state-pick','map','st-path','st-muni','muni-legend','muni-detail','st-coming','st-news-all','st-news-name','st-cal','st-cal-name'];
   window.ctMuni = null;
   dash.onData(() => {
     const g = dash.data('states');
@@ -342,7 +412,7 @@
   });
   window.ctOpen = function(code){
     if((code || null) !== window.ctState){
-      window.ctTab.st = 'overview'; window.ctNewsQ.st = '';
+      window.ctTab.st = 'overview'; window.ctNewsQ.st = ''; window.ctCalMonth.st = null;
       document.querySelectorAll('.ct-nsearch[data-scope="st"]').forEach((i) => { i.value = ''; });
     }
     window.ctState = code || null;
@@ -367,6 +437,7 @@
 
   window.ctTab = {fed: 'overview', st: 'overview'};
   window.ctNewsQ = {fed: '', st: ''};
+  window.ctCalMonth = {fed: null, st: null};
   window.ctDismissed = new Set();
   try { JSON.parse(localStorage.getItem('ct-coming-closed') || '[]').forEach((k) => window.ctDismissed.add(k)); } catch(e) {}
   const saveDismissed = () => { try { localStorage.setItem('ct-coming-closed', JSON.stringify([...window.ctDismissed])); } catch(e) {} };
@@ -387,10 +458,12 @@
     const set = (sel, hide) => document.querySelectorAll(sel).forEach((n) => { n.hidden = hide; });
     set('#fed-overview', window.ctTab.fed !== 'overview');
     set('#fed-news-pane', window.ctTab.fed !== 'news');
+    set('#fed-cal-pane', window.ctTab.fed !== 'cal');
     set('#st-coming', !coming);
     set('#state-head, #st-tabs', coming);
     set('#st-overview', coming || window.ctTab.st !== 'overview');
     set('#st-news-pane', coming || window.ctTab.st !== 'news');
+    set('#st-cal-pane', coming || window.ctTab.st !== 'cal');
     set('#st-coming-open', !key || coming);
     document.querySelectorAll('.ct-tab').forEach((b) => b.setAttribute('aria-selected', String(window.ctTab[b.dataset.scope] === b.dataset.tab)));
     const ok = dash.data('news').status === 'ok';
@@ -604,25 +677,88 @@
       el.appendChild(li);
     }
   };
+  window.ctToday = function(){ const n = new Date(); return n.getUTCFullYear() + '-' + String(n.getUTCMonth() + 1).padStart(2, '0') + '-' + String(n.getUTCDate()).padStart(2, '0'); };
+  window.ctIsPast = function(date){
+    const t = window.ctToday();
+    if(/^\d{4}-\d{2}-\d{2}$/.test(date)) return date < t;
+    if(/^\d{4}-\d{2}$/.test(date)) return date < t.slice(0, 7);
+    return false;
+  };
+  window.ctEventItem = function(r){
+    const li = document.createElement('li');
+    const top = document.createElement('div'); top.className = 'ct-meta';
+    const d = document.createElement('b'); d.textContent = window.ctFmtDate(r.date);
+    d.setAttribute('data-source', 'events'); d.setAttribute('data-field', 'date'); d.setAttribute('data-where', 'id=' + r.id);
+    top.append(d, document.createTextNode(' · ' + r.type + (/^\d{4}-\d{2}$/.test(r.date) ? ' · day not yet announced' : '')));
+    if(window.ctIsPast(r.date)){ const tg = document.createElement('span'); tg.className = 'ct-tag'; tg.textContent = 'Past'; top.appendChild(tg); }
+    const body = document.createElement(r.url ? 'a' : 'span');
+    if(r.url){ body.href = r.url; body.target = '_blank'; body.rel = 'noopener'; }
+    body.textContent = r.event;
+    body.setAttribute('data-source', 'events'); body.setAttribute('data-field', 'event'); body.setAttribute('data-where', 'id=' + r.id);
+    li.append(top, body);
+    return li;
+  };
   window.ctEventList = function(el, code){
     const g = dash.data('events');
     if(g.status !== 'ok'){ el.replaceChildren(); return; }
     const rank = (d) => /^\d{4}/.test(d) ? 0 : (d === 'Pending' ? 1 : 2);
-    const rows = g.data.filter((r) => r.state === code).sort((a, b) => d3.ascending(rank(a.date), rank(b.date)) || d3.ascending(a.date, b.date));
-    el.replaceChildren(...rows.map((r) => {
-      const li = document.createElement('li');
-      const top = document.createElement('div'); top.className = 'ct-meta';
-      const d = document.createElement('b'); d.textContent = window.ctFmtDate(r.date);
-      d.setAttribute('data-source', 'events'); d.setAttribute('data-field', 'date'); d.setAttribute('data-where', 'id=' + r.id);
-      top.append(d, document.createTextNode(' · ' + r.type));
-      const body = document.createElement(r.url ? 'a' : 'span');
-      if(r.url){ body.href = r.url; body.target = '_blank'; body.rel = 'noopener'; }
-      body.textContent = r.event;
-      body.setAttribute('data-source', 'events'); body.setAttribute('data-field', 'event'); body.setAttribute('data-where', 'id=' + r.id);
-      li.append(top, body);
-      return li;
-    }));
-    if(!rows.length){ const li = document.createElement('li'); li.className = 'ct-empty'; li.textContent = 'No scheduled board meetings or statutory changes found for this state. Check the regulator’s calendar linked above.'; el.appendChild(li); }
+    const rows = g.data.filter((r) => r.state === code && !window.ctIsPast(r.date)).sort((a, b) => d3.ascending(rank(a.date), rank(b.date)) || d3.ascending(a.date, b.date));
+    el.replaceChildren(...rows.map(window.ctEventItem));
+    if(!rows.length){ const li = document.createElement('li'); li.className = 'ct-empty'; li.textContent = 'No upcoming board meetings or statutory changes found for this state. Check the regulator’s calendar linked above.'; el.appendChild(li); }
+    if(g.data.some((r) => r.state === code)){
+      const li = document.createElement('li'); li.className = 'ct-more';
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'ct-btn';
+      b.textContent = 'Open the calendar (includes past dates) →';
+      b.addEventListener('click', () => window.ctSetTab(code === 'US' ? 'fed' : 'st', 'cal'));
+      li.appendChild(b); el.appendChild(li);
+    }
+  };
+  window.ctCalendar = function(el, code, scope){
+    el.replaceChildren();
+    const g = dash.data('events');
+    if(g.status !== 'ok' || !code) return;
+    const all = g.data.filter((r) => r.state === code);
+    const today = window.ctToday();
+    const ym = window.ctCalMonth[scope] || today.slice(0, 7);
+    const y = +ym.slice(0, 4), mo = +ym.slice(5, 7);
+    const redraw = () => dash.draw(scope === 'fed' ? 'fed-cal' : 'st-cal');
+    const shift = (k) => { const d = new Date(Date.UTC(y, mo - 1 + k, 1)); window.ctCalMonth[scope] = d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0'); redraw(); };
+    const btn = (txt, label, fn) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'ct-btn'; b.textContent = txt; b.setAttribute('aria-label', label); b.addEventListener('click', fn); return b; };
+    const head = document.createElement('div'); head.className = 'ct-cal-head';
+    const title = document.createElement('div'); title.className = 'ct-cal-title'; title.textContent = d3.utcFormat('%B %Y')(new Date(Date.UTC(y, mo - 1, 1)));
+    head.append(btn('←', 'Previous month', () => shift(-1)), title, btn('→', 'Next month', () => shift(1)));
+    if(ym !== today.slice(0, 7)) head.appendChild(btn('This month', 'Go to this month', () => { window.ctCalMonth[scope] = null; redraw(); }));
+    el.appendChild(head);
+    const inMonth = all.filter((r) => /^\d{4}-\d{2}-\d{2}$/.test(r.date) && r.date.slice(0, 7) === ym).sort((a, b) => d3.ascending(a.date, b.date));
+    const byDay = d3.group(inMonth, (r) => +r.date.slice(8, 10));
+    const grid = document.createElement('div'); grid.className = 'ct-cal-grid';
+    ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].forEach((n) => { const h = document.createElement('div'); h.className = 'ct-cal-dow'; h.textContent = n; grid.appendChild(h); });
+    const first = new Date(Date.UTC(y, mo - 1, 1)).getUTCDay();
+    const days = new Date(Date.UTC(y, mo, 0)).getUTCDate();
+    const blank = () => { const c = document.createElement('div'); c.className = 'ct-cal-day ct-out'; grid.appendChild(c); };
+    for(let i = 0; i < first; i++) blank();
+    for(let d = 1; d <= days; d++){
+      const iso = ym + '-' + String(d).padStart(2, '0');
+      const c = document.createElement('div'); c.className = 'ct-cal-day' + (iso < today ? ' ct-past' : '') + (iso === today ? ' ct-today' : '');
+      const n = document.createElement('div'); n.className = 'ct-cal-n'; n.textContent = d;
+      c.appendChild(n);
+      (byDay.get(d) || []).forEach((r) => {
+        const e = document.createElement('span'); e.className = 'ct-cal-ev'; e.textContent = r.event; e.title = r.event;
+        e.setAttribute('data-source', 'events'); e.setAttribute('data-field', 'event'); e.setAttribute('data-where', 'id=' + r.id);
+        c.appendChild(e);
+      });
+      grid.appendChild(c);
+    }
+    for(let i = 0; i < (7 - (first + days) % 7) % 7; i++) blank();
+    el.appendChild(grid);
+    const sec = (txt) => { const p = document.createElement('p'); p.className = 'ct-cal-sec'; p.textContent = txt; el.appendChild(p); };
+    const list = (rows) => { const ul = document.createElement('ul'); ul.className = 'ct-list'; rows.forEach((r) => ul.appendChild(window.ctEventItem(r))); el.appendChild(ul); };
+    sec('In ' + title.textContent);
+    const agenda = inMonth.concat(all.filter((r) => r.date === ym));
+    if(agenda.length) list(agenda);
+    else { const p = document.createElement('p'); p.className = 'ct-empty'; p.textContent = 'Nothing on the calendar this month.'; el.appendChild(p); }
+    const undated = all.filter((r) => !/^\d{4}-\d{2}/.test(r.date));
+    if(undated.length){ sec('No fixed date yet'); list(undated); }
   };
   window.ctOddsList = function(el, code){
     const g = dash.data('odds');
@@ -759,6 +895,9 @@
   dash.draw('fed-news-all', (el) => window.ctNewsAll(el, 'US', window.ctNewsQ.fed));
   dash.draw('st-news-all', (el) => { if(window.ctState) window.ctNewsAll(el, window.ctState, window.ctNewsQ.st); else el.replaceChildren(); });
   dash.draw('st-news-name', (el) => { const s = stateRow(); el.textContent = s ? s.name : ''; markState(el, 'name'); });
+  dash.draw('st-cal-name', (el) => { const s = stateRow(); el.textContent = s ? s.name : ''; markState(el, 'name'); });
+  dash.draw('fed-cal', (el) => window.ctCalendar(el, 'US', 'fed'));
+  dash.draw('st-cal', (el) => { if(window.ctState) window.ctCalendar(el, window.ctState, 'st'); else el.replaceChildren(); });
   dash.draw('st-coming', (el) => {
     el.replaceChildren();
     const s = stateRow();
@@ -821,7 +960,7 @@
       const t = document.createElement('div'); t.textContent = r.requirement;
       t.setAttribute('data-source', 'pathways'); t.setAttribute('data-field', 'requirement'); t.setAttribute('data-where', 'id=' + r.id);
       right.appendChild(t);
-      if(r.source){ const a = document.createElement('a'); a.href = r.source; a.target = '_blank'; a.rel = 'noopener'; a.className = 'ct-meta'; a.textContent = 'Source'; right.appendChild(a); }
+      if(r.source){ const a = document.createElement('a'); a.href = r.source; a.target = '_blank'; a.rel = 'noopener'; a.className = 'ct-meta'; a.textContent = 'Source: ' + window.ctSourceName(r.source); right.appendChild(a); }
       box.append(left, right);
       el.appendChild(box);
     });
@@ -964,7 +1103,7 @@
     add('Moratorium expires', 'moratoriumExpires', d.moratoriumExpires ? window.ctFmtDate(d.moratoriumExpires) : '');
     add('Local ballot question', 'ballot', d.ballot);
     add('Ordinance', 'ordinance', d.ordinance, true);
-    if(d.source){ const dt = document.createElement('dt'); dt.textContent = 'Source'; const dd = document.createElement('dd'); const a = document.createElement('a'); a.href = d.source; a.target = '_blank'; a.rel = 'noopener'; a.textContent = d.origin === 'Claude research' ? 'Official state source' : 'Source'; a.setAttribute('data-source', 'munis'); a.setAttribute('data-field', 'source'); a.setAttribute('data-where', 'id=' + d.id); dd.appendChild(a); dl.append(dt, dd); }
+    if(d.source){ const dt = document.createElement('dt'); dt.textContent = 'Source'; const dd = document.createElement('dd'); const a = document.createElement('a'); a.href = d.source; a.target = '_blank'; a.rel = 'noopener'; a.textContent = window.ctSourceName(d.source); a.setAttribute('data-source', 'munis'); a.setAttribute('data-field', 'source'); a.setAttribute('data-where', 'id=' + d.id); dd.appendChild(a); dl.append(dt, dd); }
     add('Tracker updated', 'updated', d.updated ? window.ctFmtDate(d.updated) : '');
     el.appendChild(dl);
   });
