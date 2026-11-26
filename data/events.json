@@ -267,9 +267,9 @@
   "id": "e34",
   "state": "US",
   "date": "2026-11-29",
-  "event": "DEA cutoff: registered and timely-applicant medical businesses may buy and sell only with each other (petitions for review with emergency stay motions pending in the D.C. Circuit)",
+  "event": "DEA cutoff: registered and timely-applicant medical businesses may buy and sell only with each other. Partly stayed: on Nov. 25 the D.C. Circuit administratively stayed the guidance as it applies to timely applicants' state-licensed dealings with businesses that are neither registrants nor timely applicants, pending further order",
   "type": "Deadline",
-  "url": "https://www.marijuanamoment.net/medical-marijuana-companies-sue-dea-in-federal-court-over-restrictions-it-imposed-for-rescheduling-protections/"
+  "url": "https://www.marijuanamoment.net/federal-court-pauses-dea-medical-marijuana-rules-that-companies-and-states-say-will-upend-markets-and-patient-access/"
  },
  {
   "id": "e35",
@@ -350,5 +350,37 @@
   "event": "D.C. Circuit: businesses' replies due 4 p.m. on emergency motions to stay DEA's Nov. 29 guidance",
   "type": "Deadline",
   "url": "https://themarijuanaherald.com/2026/11/federal-appeals-court-orders-dea-to-respond-today-to-emergency-challenges-against-november-29-medical-marijuana-restrictions/"
+ },
+ {
+  "id": "e45",
+  "state": "US",
+  "date": "2026-12-28",
+  "event": "Comments due on DEA's proposed adjustments to 2026 production quotas (including psilocybin, psilocyn, methylone and HHC)",
+  "type": "Deadline",
+  "url": "https://www.federalregister.gov/documents/2026/11/25/2026-23959/proposed-adjustments-to-the-aggregate-production-quotas-for-schedule-i-and-ii-controlled-substances"
+ },
+ {
+  "id": "e46",
+  "state": "US",
+  "date": "2026-12-01",
+  "event": "D.C. Circuit rescheduling challenge: amicus briefs supporting the challengers due",
+  "type": "Deadline",
+  "url": "https://www.marijuanamoment.net/marijuana-opponents-say-trumps-audacious-rescheduling-move-is-illegal-and-must-be-overturned-in-new-lawsuit-brief/"
+ },
+ {
+  "id": "e47",
+  "state": "US",
+  "date": "2027-01-13",
+  "event": "D.C. Circuit rescheduling challenge: government's response brief due",
+  "type": "Deadline",
+  "url": "https://www.marijuanamoment.net/marijuana-opponents-say-trumps-audacious-rescheduling-move-is-illegal-and-must-be-overturned-in-new-lawsuit-brief/"
+ },
+ {
+  "id": "e48",
+  "state": "US",
+  "date": "2027-01-20",
+  "event": "D.C. Circuit rescheduling challenge: amicus briefs supporting the government due",
+  "type": "Deadline",
+  "url": "https://www.marijuanamoment.net/marijuana-opponents-say-trumps-audacious-rescheduling-move-is-illegal-and-must-be-overturned-in-new-lawsuit-brief/"
  }
 ]
