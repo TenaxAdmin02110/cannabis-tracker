@@ -2,7 +2,7 @@
   "title": "National Cannabis Outlook Tracker",
   "titleSuffix": "Tenax Strategies",
   "lang": "en",
-  "published": "2026-11-26T12:23:12Z",
+  "published": "2026-11-27T12:30:33Z",
   "datasets": {
     "basemap": {
       "file": "basemap.json",
@@ -20,10 +20,10 @@
     },
     "events": {
       "file": "events.json",
-      "bytes": 13956,
-      "rows": 48,
-      "sha256": "a1c6f279e70db2a2cb056b0721265204ee65c00467d98ed283c828b05cc80ff2",
-      "changed": "2026-11-26T12:23:12Z"
+      "bytes": 15097,
+      "rows": 50,
+      "sha256": "6154478cd4e508d14662ec91f999dc717b4cff6b4fb88df667d6637918e165fc",
+      "changed": "2026-11-27T12:30:33Z"
     },
     "munigeo": {
       "file": "munigeo.json",
@@ -41,10 +41,10 @@
     },
     "news": {
       "file": "news.json",
-      "bytes": 74344,
-      "rows": 142,
-      "sha256": "c55e4c6edf797c65caa4879f48645ba5c751780cb260e08e4c138c0fb80f9e9d",
-      "changed": "2026-11-26T12:23:12Z"
+      "bytes": 75651,
+      "rows": 144,
+      "sha256": "dc049dc832c5cfa315ad6f06d68a42d359bc346f821c8c30f5e7ae8e81567c05",
+      "changed": "2026-11-27T12:30:33Z"
     },
     "odds": {
       "file": "odds.json",
